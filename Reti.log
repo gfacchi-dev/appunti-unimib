@@ -1,0 +1,233 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.11.29)  7 DEC 2019 13:44
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/Reti.tex"
+(c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/Reti.tex
+LaTeX2e <2019-10-01> patch level 3
+(c:/texlive/2019/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/10/25 v1.4k Standard LaTeX document class
+(c:/texlive/2019/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2019/10/25 v1.4k Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (c:/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+ (c:/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+) (c:/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/01 v1.3d Standard LaTeX Graphics (DPC,SPQR)
+ (c:/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (c:/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+ (c:/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+) (c:/texlive/2019/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+) (c:/texlive/2019/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2019/11/14 3.36 The Babel package
+ (c:/texlive/2019/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2019/11/14 3.36 Babel switching mechanism
+) (c:/texlive/2019/texmf-dist/tex/generic/babel-italian/italian.ldf
+Language: italian 2019/01/05 v.1.4.01 Italian support for the babel system
+ (c:/texlive/2019/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2019/11/14 3.36 Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen105
+ (c:/texlive/2019/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count89
+)
+\it@lettering=\count90
+\it@doublequoteactive=\count91
+\it@ISOcompliance=\count92
+)) (c:/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count93
+) (c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/Reti.aux)
+\openout1 = `Reti.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+ (c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count94
+\scratchdimen=\dimen106
+\scratchbox=\box27
+\nofMPsegments=\count95
+\nofMParguments=\count96
+\everyMPshowfont=\toks15
+\MPscratchCnt=\count97
+\MPscratchDim=\dimen107
+\MPnumerator=\count98
+\makeMPintoPDFobject=\count99
+\everyMPtoPDFconversion=\toks16
+) (c:/texlive/2019/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2019/11/24 v2.7 Base part for package epstopdf
+ (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+) (c:/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+ (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+ (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+))) (c:/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+ (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+ (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+ (c:/texlive/2019/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+ (c:/texlive/2019/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+))))) (c:/texlive/2019/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 442.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 460.
+ (c:/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+LaTeX Info: Redefining \it@ocap on input line 12.
+LaTeX Info: Redefining \it@ccap on input line 12.
+
+
+File italian.ldf warning: 
+italian.ldf    With OT1 encoding guillemets are poorly faked
+italian.ldf    Use T1 encoding
+italian.ldf    or specify a font with command \CaporaliFrom
+italian.ldf    See the documentation concerning the babel-italian typesetting 
+italian.ldf    on input line 12.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 13.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 13.
+[1
+
+{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/Reti.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 4.
+)
+\tf@toc=\write3
+\openout3 = `Reti.toc'.
+
+ [2]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 23.
+ (c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
+<./images/adattatore.png, id=13, 542.025pt x 436.63126pt>
+File: ./images/adattatore.png Graphic file (type png)
+<use ./images/adattatore.png>
+Package pdftex.def Info: ./images/adattatore.png  used on input line 45.
+(pdftex.def)             Requested size: 390.0pt x 314.1744pt.
+ [3]
+<./images/errorebit.png, id=18, 700.6175pt x 461.725pt>
+File: ./images/errorebit.png Graphic file (type png)
+<use ./images/errorebit.png>
+Package pdftex.def Info: ./images/errorebit.png  used on input line 58.
+(pdftex.def)             Requested size: 390.0pt x 257.0213pt.
+ [4 <./images/adattatore.png>]
+<./images/paritybit.png, id=24, 323.2075pt x 110.4125pt>
+File: ./images/paritybit.png Graphic file (type png)
+<use ./images/paritybit.png>
+Package pdftex.def Info: ./images/paritybit.png  used on input line 75.
+(pdftex.def)             Requested size: 214.50119pt x 73.2768pt.
+ [5 <./images/errorebit.png>]
+<./images/paritybid.png, id=29, 447.6725pt x 515.9275pt>
+File: ./images/paritybid.png Graphic file (type png)
+<use ./images/paritybid.png>
+Package pdftex.def Info: ./images/paritybid.png  used on input line 105.
+(pdftex.def)             Requested size: 253.49762pt x 292.15298pt.
+ [6 <./images/paritybit.png>] [7 <./images/paritybid.png>]
+<./images/crc1.PNG, id=39, 665.48625pt x 404.26031pt>
+File: ./images/crc1.PNG Graphic file (type png)
+<use ./images/crc1.PNG>
+Package pdftex.def Info: ./images/crc1.PNG  used on input line 132.
+(pdftex.def)             Requested size: 390.0pt x 236.91386pt.
+<./images/crc2.PNG, id=41, 524.96124pt x 128.48pt>
+File: ./images/crc2.PNG Graphic file (type png)
+<use ./images/crc2.PNG>
+Package pdftex.def Info: ./images/crc2.PNG  used on input line 139.
+(pdftex.def)             Requested size: 253.49762pt x 62.04218pt.
+ [8 <./images/crc1.PNG>] [9 <./images/crc2.png>]
+<./images/TDMA.PNG, id=51, 480.29437pt x 78.2925pt>
+File: ./images/TDMA.PNG Graphic file (type png)
+<use ./images/TDMA.PNG>
+Package pdftex.def Info: ./images/TDMA.PNG  used on input line 190.
+(pdftex.def)             Requested size: 390.0pt x 63.57425pt.
+ [10 <./images/TDMA.PNG>]
+<./images/FDMA.PNG, id=56, 620.3175pt x 194.97844pt>
+File: ./images/FDMA.PNG Graphic file (type png)
+<use ./images/FDMA.PNG>
+Package pdftex.def Info: ./images/FDMA.PNG  used on input line 209.
+(pdftex.def)             Requested size: 390.0pt x 122.58417pt.
+<./images/tdmafdma.png, id=57, 493.845pt x 386.44376pt>
+File: ./images/tdmafdma.png Graphic file (type png)
+<use ./images/tdmafdma.png>
+Package pdftex.def Info: ./images/tdmafdma.png  used on input line 215.
+(pdftex.def)             Requested size: 292.5pt x 228.88434pt.
+ [11 <./images/FDMA.PNG> <./images/tdmafdma.png>]
+<./images/slottedaloha.png, id=63, 711.65875pt x 298.11375pt>
+File: ./images/slottedaloha.png Graphic file (type png)
+<use ./images/slottedaloha.png>
+Package pdftex.def Info: ./images/slottedaloha.png  used on input line 247.
+(pdftex.def)             Requested size: 390.0pt x 163.36717pt.
+ [12] [13 <./images/slottedaloha.png>] [14] (c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/Reti.aux) ) 
+Here is how much of TeX's memory you used:
+ 2588 strings out of 492164
+ 36544 string characters out of 6129087
+ 115290 words of memory out of 5000000
+ 6916 multiletter control sequences out of 15000+600000
+ 9514 words of font info for 33 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 55i,6n,32p,849b,230s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on "c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/Reti.pdf" (14 pages, 328461 bytes).
+PDF statistics:
+ 111 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+

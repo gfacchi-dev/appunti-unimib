@@ -1,0 +1,130 @@
+PWD c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex
+INPUT c:/texlive/2019/texmf.cnf
+INPUT c:/texlive/2019/texmf-dist/web2c/texmf.cnf
+INPUT c:/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/Reti.tex
+OUTPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/Reti.log
+INPUT c:/texlive/2019/texmf-dist/tex/latex/base/article.cls
+INPUT c:/texlive/2019/texmf-dist/tex/latex/base/article.cls
+INPUT c:/texlive/2019/texmf-dist/tex/latex/base/size12.clo
+INPUT c:/texlive/2019/texmf-dist/tex/latex/base/size12.clo
+INPUT c:/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT c:/texlive/2019/texmf-dist/tex/latex/placeins/placeins.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/placeins/placeins.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/babel/babel.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/babel/babel.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/babel/switch.def
+INPUT c:/texlive/2019/texmf-dist/tex/generic/babel-italian/italian.ldf
+INPUT c:/texlive/2019/texmf-dist/tex/generic/babel-italian/italian.ldf
+INPUT c:/texlive/2019/texmf-dist/tex/generic/babel/babel.def
+INPUT c:/texlive/2019/texmf-dist/tex/generic/babel/txtbabel.def
+INPUT c:/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/Reti.aux
+INPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/Reti.aux
+OUTPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/Reti.aux
+INPUT c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT c:/texlive/2019/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT c:/texlive/2019/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT c:/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+OUTPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/Reti.pdf
+INPUT c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/Reti.toc
+INPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/Reti.toc
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
+OUTPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/Reti.toc
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+INPUT c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+INPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/./images/adattatore.png
+INPUT ./images/adattatore.png
+INPUT ./images/adattatore.png
+INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
+INPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/./images/errorebit.png
+INPUT ./images/errorebit.png
+INPUT ./images/errorebit.png
+INPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/./images/paritybit.png
+INPUT ./images/paritybit.png
+INPUT ./images/paritybit.png
+INPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/./images/paritybid.png
+INPUT ./images/paritybid.png
+INPUT ./images/paritybid.png
+INPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/./images/crc1.PNG
+INPUT ./images/crc1.PNG
+INPUT ./images/crc1.PNG
+INPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/./images/crc2.PNG
+INPUT ./images/crc2.png
+INPUT ./images/crc2.png
+INPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/./images/TDMA.PNG
+INPUT ./images/TDMA.PNG
+INPUT ./images/TDMA.PNG
+INPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/./images/FDMA.PNG
+INPUT ./images/FDMA.PNG
+INPUT ./images/FDMA.PNG
+INPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/./images/tdmafdma.png
+INPUT ./images/tdmafdma.png
+INPUT ./images/tdmafdma.png
+INPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/./images/slottedaloha.png
+INPUT ./images/slottedaloha.png
+INPUT ./images/slottedaloha.png
+INPUT c:/Users/beppe/OneDrive - Universita degli Studi di Milano-Bicocca/Reti/Latex/Reti.aux
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
