@@ -1,0 +1,252 @@
+\documentclass[12pt]{article}
+
+\title{Sommario}
+\author{}
+\date{}
+
+\begin{document}
+    \maketitle
+    \section{Introduzione alle Basi di Dati}
+    \paragraph{Base di dati}
+    \begin{itemize}
+        \item Insieme organizzato di dati utilizzati per lo svolgimento di determinate attività (di un ente, azienda, ufficio, persona)
+        \item Una risorsa integrata, condivisa fra i vari settori di una organizzazione
+    \end{itemize}
+    \paragraph{Struttura di un sistema informatico}
+    \begin{itemize}
+        \item Interfaccia utente
+        \item Applicazioni
+        \item Software di ambiente e di sistema
+        \item Basi di dati
+        \item Software di base 
+        \item Hardware centralizzato e distribuito
+        \item Sistema di comunicazione di rete
+    \end{itemize}
+    \paragraph{Ridondanza}
+    Informazioni ripetute
+    \paragraph{Rischio di incoerenza}
+    Le versioni possono non coincidere
+    \newpage
+    \paragraph{Data Base Management System, Sistema di Gestione di Basi di Dati (DBMS)}
+    Sistema (prodotto software) in grado di gestire collezioni di dati che siano (anche): 
+    \begin{itemize}
+        \item \textbf{Grandi}, di dimensioni (molto) maggiori della memoria centrale dei sistemi di calcolo utilizzati
+        \item \textbf{Persistenti}, con un periodo di vita indipendente dalle singole esecuzioni dei programmi che le utilizzano
+        \item \textbf{Condivise}, utilizzate da applicazioni diverse
+    \end{itemize}
+    e garantendo:
+    \begin{itemize}
+        \item \textbf{Affidabilità}, resistenza a malfunzionamenti hardware e software 
+        \item \textbf{Sicurezza}, con una disciplina e un controllo degli accessi
+        \item \textbf{Efficienza}, utilizzando al meglio le risorse di spazio e tempo del sistema
+    \end{itemize}
+
+    \paragraph{Schema (di base di dati)}
+    Uno schema descrive un insieme di concetti, cioe’ classi di dati
+    \paragraph{Istanza (di base di dati)}
+    Una istanza descrive un insieme di dati che fanno riferimento ai concetti dello schema
+    \paragraph{Modello}
+    Insieme di costrutti utilizzati per organizzare i dati di interesse in concetti e descriverne la dinamica, cioè come cambiano nel tempo 
+    \paragraph{Struttura di rappresentazione}
+    Componenti fondamentali di un modello \textit{(es. Struttura utilizzata: la relazione)}
+    \paragraph{Modello logico}
+    \begin{itemize}
+        \item utilizzati nei DBMS esistenti in commercio per l’organizzazione dei dati
+        \item utilizzati dai programmi
+        \item \textbf{indipendenti dalle strutture fisiche}
+    \end{itemize}
+	esempi: Relazionale,  reticolare, gerarchico, a oggetti
+    \newpage
+    \paragraph{Modello concettuale}
+    permettono di rappresentare i dati in modo indipendente da ogni sistema DBMS
+    \begin{itemize}
+        \item cercano di descrivere direttamente i concetti del mondo reale
+        \item sono utilizzati nelle fasi preliminari di progettazione
+    \end{itemize}
+	Il più noto è il modello Entità-Relazione
+    \paragraph{Schema logico}
+    Descrizione della base di dati con strutture di alto livello (ad esempio, la struttura di relazione)
+    \paragraph{Schema fisico}
+    Rappresentazione dello schema logico per mezzo di strutture fisiche di memorizzazione (files), blocchi in memoria, ecc.
+    \paragraph{Schema esterno}
+    Descrizione di parte della base di dati in un modello logico (“viste” parziali, di interesse per particolari gruppi di utenti)
+    \paragraph{Indipendenza fisica}
+    \textit{Il livello logico e quello esterno sono indipendenti da quello fisico}
+    \begin{itemize}
+        \item una relazione è utilizzata nello stesso modo qualunque sia la sua realizzazione fisica
+        \item la realizzazione fisica può cambiare senza che debbano essere modificati i programmi software
+    \end{itemize}
+    \paragraph{Indipendenza logica}
+    \textit{Il livello esterno è indipendente da quello logico}: 
+    \begin{itemize}
+        \item aggiunte o modifiche agli schemi esterni non richiedono modifiche al livello logico
+        \item modifiche allo schema logico che lascino inalterato lo schema esterno sono trasparenti 
+    \end{itemize}
+
+    \paragraph{Data Description Language}
+    Linguaggio di descrizione dei dati, con cui si descrivono le strutture degli schemi
+    \paragraph{Data Manipulation Language}
+    Linguaggio di manipolazione dei dati, con cui si esprimono le interrogazioni che ritrovano i dati dalla base di dati e le transazioni che li aggiornano (es. SQL)
+
+    \section{Il modello Entità-Relazione}
+    \paragraph{Entità}
+    Una entità è una classe di oggetti (fatti, persone, cose) che:
+    \begin{itemize}
+        \item sono di interesse per l’applicazione
+        \item hanno esistenza autonoma
+        \item hanno proprietà comuni
+    \end{itemize}
+    \paragraph{Attributo di Entità}
+    Un attributo di entità è una proprietà locale di un’entità, di interesse ai fini dell’applicazione, cioè una proprietà il cui valore in ogni istanza della entità dipende solamente dall’istanza della entità, e non da altri elementi dello schema
+    \paragraph{Dominio di attributo}
+    Si possono utilizzare come domini quelli tipicamente definiti nei linguaggi programmativi
+    \paragraph{Relazione}
+    Una relazione si definisce su due o più entità, e rappresenta un legame logico fra tali entità. Il numero di entità coinvolte in una relazione determina il suo grado (2, 3, 4, …)
+    \begin{itemize}
+        \item singolare
+        \item sostantivi invece che verbi (se possibile e naturale)
+    \end{itemize}
+    \paragraph{Attributo di relazione}
+    \begin{itemize}
+        \item Un attributo di relazione è una proprietà locale di una relazione
+        \item Un attributo della relazione $R$ tra le entita $E_1, E_2, \dots,E_n$descrive una proprietà che non è di $E1$, non è di $E2$,…, non è di $E_n$, ma del legame logico tra $E_1, E_2, \dots, E_n$ rappresentato da $R$
+        \item è una funzione che associa ad ogni istanza di relazione un valore appartenente ad un insieme detto dominio dell’attributo
+    \end{itemize}
+    \newpage
+    \paragraph{Vincolo di cardinalità}
+    Un vincolo di cardinalità tra una entità E e una relazione R esprime un limite minimo (cardinalità minima) ed un limite massimo (cardinalità massima) di istanze della relazione R a cui può partecipare ogni istanza dell’entità E
+    \paragraph{Relazione IS-A}
+    Tra due classi rappresentate da due entità nello schema concettuale sussista la relazione IS-A (o relazione di sottoinsieme), e cioè che ogni istanza di una sia anche istanza dell’altra.
+    \\La relazione IS-A nel modello ER si può definire tra due entità, che si dicono “entità padre” ed “entità figlia” (o sottoentità, cioè quella che rappresenta un sottoinsieme della entità padre).
+    \paragraph{Generalizzazione}
+    Talvolta, però, l’entità padre può generalizzare diverse sottoentità rispetto ad un unico criterio. In questo caso si parla di generalizzazione.
+    \begin{itemize}
+        \item \textbf{Completa}: l’unione delle istanze delle sottoentità è uguale all’insieme delle istanze dell’entità padre (freccia nera)
+        \item \textbf{Non completa} (freccia vuota)
+    \end{itemize}
+    \paragraph{Attributi composti}
+    Un attributo può anche essere definito su un dominio complesso. Di particolare interesse è il caso di dominio di tipo “record”, cioè composto di domini (anche detti coampi) elementari. Un attributo il cui dominio è di tipo record si dice composto.
+    \paragraph{Relazioni n-arie}
+    Una relazione di grado maggiore di 2 si dice n-aria
+    \paragraph{Identificatori}
+    Un identificatore di una entità è un insieme di proprietà (attributi o relazioni) che permettono di identificare univocamente le istanze di un’entità.
+    \\Tipi:
+    \begin{itemize}
+        \item \textbf{Interno}, ossia formato solo da attributi di E
+        \item \textbf{Esterno}, ossia formato da attributi di E e da relazioni che coinvolgono E, oppure solo da relazioni che coinvolgono E
+    \end{itemize}
+    \newpage
+    \section{Modello Relazionale}
+    \paragraph{Modello logico dei dati}
+    Un insieme di strutture di rappresentazione utilizzabili per descrivere un insieme di dati, o schema logico, che, a sua volta, descrive una realtà di interesse
+    \paragraph{Struttura di rappresentazione}
+    Relazione $\rightarrow$ Descrizione nel modello logico \\\textit{es. Gara(Numero, Sede, SiglaAutomobile, Marca, Guidatore)}
+    \paragraph{Schema logico}
+    \begin{itemize}
+        \item \textbf{Relationship}: che rappresenta una classe di fatti, nel modello Entity-Relationship
+        \item \textbf{Relazione matematica}: come nella teoria degli insiemi
+        \item \textbf{Relazione}: secondo il modello relazionale dei dati
+    \end{itemize}
+
+    \paragraph{Relazione matematica}
+    \begin{itemize}
+        \item $D_1, \dots, D_n$ ($n$  insiemi anche non distinti, detti anche domini) 
+        \item Prodotto cartesiano $D_1 \times \dots \times D_n$: 
+            \begin{itemize}
+                \item L’insieme di tutte le  $n$-uple ($d_1, \dots, d_n$) tali che $d1 \in D_1, \dots, d_n \in D_n $
+            \end{itemize}
+        \item relazione matematica su $D_1, \dots, D_n$:
+            \begin{itemize}
+                \item un sottoinsieme di $D_1 \times \dots \times D_n$.
+            \end{itemize}
+        \item $D_1, \dots, D_n$ sono i domini della relazione 
+    \end{itemize}
+    Proprietà:
+    \begin{itemize}
+        \item una relazione matematica è un insieme di  $n$-uple al loro interno ordinate
+        \item una relazione è un \textbf{insieme}, quindi:
+        \begin{itemize}
+            \item non c'è ordinamento fra le diverse n-uple
+            \item le $n$-uple sono distinte (non ce ne possono essere due uguali) 
+            \item ciascuna $n$-upla è al suo interno ordinata: l’$i$-esimo valore proviene dall’$i$-esimo dominio
+        \end{itemize}
+    \end{itemize}
+    \paragraph{Relazioni}
+    Una relazione (o tabella) nel modello relazionale rappresenta una relazione (in matematica) in cui:
+    \begin{itemize}
+        \item i valori di ogni colonna (attributo) sono fra loro omogenei (es. Juve, Lazio, ecc.)
+        \item le righe (n-ple o tuple) sono diverse fra loro
+        \item le intestazioni delle colonne (nomi di attributi) sono diverse tra loro 
+    \end{itemize}
+    In una relazione nel modello relazionale:
+    \begin{itemize}
+        \item l’ordinamento tra le righe è irrilevante
+        \item l’ordinamento tra le colonne è irrilevante 
+    \end{itemize}
+    \paragraph{Modello relazionale basato su valori}
+    Il modello relazionale è basato su valori. I riferimenti fra dati in relazioni diverse sono rappresentati per mezzo di valori dei domini che compaiono nelle ennuple. \\Vantaggi:
+    \begin{itemize}
+        \item l’utente finale vede gli stessi dati dei programmatori, che sono appunto costituiti dalle tabelle
+        \item indipendenza della rappresentazione dalle strutture fisiche (ad es. indirizzi di memoria), che possono cambiare dinamicamente
+        \item i dati sono portabili più facilmente da un sistema ad un altro, perché non dipendono dalle caratteristiche fisiche
+    \end{itemize}
+    \paragraph{Schema di relazione}
+    Un nome $R$  con un insieme di attributi $A_1, \dots, A_n$: $$R(A_1, \dots, A_n)$$
+    \paragraph{Schema di base di dati}
+    Insieme di schemi di relazione: $$R = {R_1(X_1), \dots, R_k(X_k)}$$
+    \paragraph{Ennupla / n-upla}
+    \begin{itemize}
+        \item Una ennupla (o n-pla) su un insieme di attributi $X$  è una funzione che associa a ciascun attributo $A$ in $X$  un valore del dominio di $A$
+        \item Esempio $\rightarrow$ Codice:01 Titolo:Analisi Docente:Rossi
+        \item Il simbolo $t[A]$ denota il valore della ennupla $t$ sull'attributo $A$
+        \item Esempio $t[Codice]$ per la ennupla sopra è 01      
+    \end{itemize}
+    \paragraph{Istanza di relazione}
+    Istanza di relazione (o relazione) su uno schema $R(X)$: insieme  $r$  di ennuple su $X$
+    \paragraph{Istanza di base di dati}
+    Istanza di base di dati (o base di dati) su uno schema  $R= \{R_1(X_1), \dots, R_n(X_n)\}$ : insieme di relazioni $r = {r_1, \dots, r_n}$ (con  $r_i$  relazione su  $R_i$) 
+    \paragraph{Vincolo di integrità}
+    Proprietà che deve essere soddisfatta da tutte le istanze di uno schema che rappresentano info corrette per l’applicazione\\
+    Un vincolo di integrità è una funzione booleana (o predicato) che associa ad ogni istanza $r$:
+    \begin{itemize}
+        \item Il valore vero se la istanza è corretta (rappresentazione della realtà)
+        \item Il valore falso se la istanza è scorretta (rappresentazione della realtà)
+    \end{itemize}
+    \paragraph{Vincolo intrarelazionale}
+    Definiti all‘interno di una relazione
+    \subparagraph{Vincolo di valore}
+    Vincoli su valori (o di dominio), cioè su singoli valori di attributi  
+    \subparagraph{Vincolo di ennupla}
+    Vincoli di ennupla, cioè definiti sulle ennuple di una relazione
+    \begin{itemize}
+        \item Esprimono condizioni sui valori di ciascuna ennupla in una relazione
+        \item Esempio: non ci possono essere due ennuple con lo stesso numero di matricola   
+    \end{itemize}
+    \subparagraph{Vincolo di relazione}
+    Vincoli relativi all'insieme di ennuple di una relazione
+    \subparagraph{Vincolo di chiave}
+    Abbiamo necessità di individuare informazioni che  ci permettano di rappresentare ogni oggetto di interesse con una ennupla differente e identificarlo quando se ne abbia necessita
+    \begin{itemize}
+        \item \textbf{Chiave}: Insieme di attributi che identificano le ennuple di una relazione
+        \item un insieme $K$ di attributi è \textbf{superchiave} per una relazione $r$  se $r$  non contiene due ennuple distinte $t_1$ e $t_2$  con  $t_1[K] = t_2[K]$
+        \item $K$ è anche chiave per $r$ se è una superchiave minimale per $r$ (cioè non contiene un’altra superchiave)
+    \end{itemize}
+    \paragraph{Vincolo interrelazionale}
+    Definiti tra due o più relazioni 
+    \paragraph{Valori nulli}
+    \begin{itemize}
+        \item \textbf{valore sconosciuto}: non lo conosciamo ma esiste
+        \item \textbf{valore inesistente}: non esiste 
+        \item \textbf{valore senza informazione}: non si può dire niente (non lo conosciamo ovvero non esiste)
+    \end{itemize}
+
+
+
+
+    
+
+
+
+
+
+\end{document}
