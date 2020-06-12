@@ -1,4 +1,4 @@
-# Appunti UniMiB
+# Appunti UniMiB Giuseppe Facchi
 
 Raccolta di appunti Unimib vari di Giuseppe Facchi
 
