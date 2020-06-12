@@ -1,0 +1,681 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage[section]{placeins}
+\usepackage[italian]{babel}
+
+\title{}
+\author{}
+\date{}
+
+\begin{document}
+    \section{Calcolo delle probabilità}
+    \paragraph{Esercizio 1}
+    Supponiamo che dieci carte numerate da uno a dieci vengano introdotte in un cappello e che una carta venga estratta a caso. Vogliamo determinare: 
+    \\a) Qual è la probabilità che la carta estratta sia il dieci? 
+    \\b) Sapendo che la carta estratta è maggiore di quattro, qual è la probabilità che sia un dieci?
+    \paragraph{Esercizio 2}
+    In una famiglia vi sono 2 figli. Qual è la probabilità che entrambi siano maschi dato che almeno
+    uno di loro è maschio?
+    \paragraph{Esercizio 3}
+    Si supponga che un’urna contenga 7 palline bianche e 5 nere. Supponiamo di estrarre due
+    palline senza reimmissione. 
+    \\ Assumendo che ogni pallina possa essere estratta con egual probabilità, qual è la probabilità che entrambe le palline estratte siano bianche?
+    \paragraph{Esercizio 4}
+    Supponiamo che tre amici ad una festa gettino il proprio cappello sulla stessa sedia. Questi cappelli vengono mescolati tra loro e, successivamente, i tre amici scelgono un cappello a caso.
+    \\ Qual è la probabilità che nessuno di loro venga in possesso del proprio cappello?
+    \newpage
+    \paragraph{Esercizio 5}
+    Viene estratta una pallina da un’urna che contiene 4 palline numerate da 1 a 4.
+    \\Siano $E =\{1,2\}$, $F=\{1,3\}$, e $G=\{1,4\}$, calcolare
+    \begin{itemize}
+        \item $P(E)$
+        \item $P(E \cap G)$
+        \item $P(F \cap G)$
+        \item $P(E \cap F \cap G)$
+    \end{itemize}
+    \paragraph{Esercizio 6}
+    Si considerino due urne. La prima contiene 2 palline bianche e 7 nere, mentre la seconda contiene 5 palline bianche e 6 nere. Lanciamo una moneta e se otteniamo testa estraiamo una pallina dalla prima urna, altrimenti estraiamo una pallina della seconda urna.
+    \\Qual è la probabilità che il lancio della moneta sia stato testa dato che la pallina estratta è bianca?
+    \paragraph{Esercizio 7}
+    Uno studente risponde ad un quiz multivalore conoscendo la risposta o selezionando a caso. Si indichi con $p$ la probabilità che lo studente conosca la risposta (ha studiato).
+    \\Supponiamo che uno studente che non conosca la risposta indovini con probabilità $1/m$, dove $m$ è il numero di risposte possibili.
+    \\Qual è la probabilità che lo studente conoscesse la risposta dato che ha risposto correttamente?
+    \paragraph{Esercizio 8}
+    Un test di laboratorio è efficace al $95\%$ nel rilevare una certa malattia quando questa è presente. Il test fornisce comunque “falsi positivi” (dice che una persona sana è malata) per l’$1\%$ delle persone sane esaminate.
+    \\Nel caso in cui lo $0.5\%$ della popolazione sia affetto dalla suddetta malattia,qual è la probabilità che una persona sia effettivamente malata dato che il test da risultato positivo?
+    \newpage
+    \paragraph{Esercizio 9}
+    Si sa che una data lettera ha eguale probabilità di essere contenuta in uno di tre folders. Si indichi con $\alpha _i$ la probabilità che la lettera venga trovata tramite una ricerca sommaria nel folder $i$. Pertanto con probabilità $(1- \alpha _i)$ la lettera non viene trovata anche se si trova nel folder $i$. Supponiamo di cercare nel folder $1$ senza trovare la lettera.
+    \\Qual è la probabilità che la lettera sia nel folder $1$?
+    \paragraph{Esercizio 10}
+    Un'urna contiene 3 biglie bianche e 2 biglie nere.
+    \begin{itemize}
+        \item Calcolare la probabilità che estraendo in successione (senza reimbussolamento) 3 biglie almeno una sia nera.
+        \item Ripetere il punto precedente supponendo il reimbussolamento.
+    \end{itemize}
+    \paragraph{Esercizio 11}
+    Una squadra di calcio schiera ad ogni partita 1 portiere, 5 difensori e 5 attaccanti.
+    La società “Aleas” sceglie in modo casuale ciascun gruppo di giocatori tra 2 portieri, 8 difensori e 12 attaccanti disponibili.
+    \begin{itemize}
+        \item Quante sono le formazioni possibili?
+        \item Se Roberto e Ronaldo sono due attaccanti, quante sono le formazioni in cui giocano entrambi?
+        \item Se Franco è un difensore, quante sono le formazioni in cui gioca con l’attaccante Roberto?
+    \end{itemize}
+    \paragraph{Esercizio 12}
+    Date due urne indistinguibili esternamente. La prima contiene 3 palline rosse, 1 bianca e 2 verdi, mentre la seconda contiene 1 pallina rossa, 3 bianche e 2 verdi. Presa un’urna a caso, si estraggono due palline senza reimbussolamento da tale urna. Calcolare la probabilità che:
+    \begin{itemize}
+        \item Vengano estratte due palline rosse
+        \item Venga estratta almeno una pallina rossa
+        \item L’urna dalla quale stiamo estraendo sia la prima quando la prima pallina estratta è rossa
+        \item La seconda pallina estratta dall’urna sia rossa quando la prima è rossa
+    \end{itemize}
+    \paragraph{Esercizio 13}
+    Due urne indistinguibili esternamente. La prima contiene 2 palline rosse, 2 bianche e 4 verdi, mentre la seconda contiene 2 palline rosse, 4 bianche e 2 verdi. Selezioniamo un’urna a caso ed estraiamo da essa due palline senza reimbussolamento. Calcolare la probabilità che:
+    \begin{itemize}
+        \item Vengano estratte due palline verdi
+        \item L’urna dalla quale stiamo estraendo sia la prima sapendo che la prima pallina estratta è verde
+        \item Vengano estratte due palline di colore diverso
+    \end{itemize}
+    \paragraph{Esercizio 14}
+    Si effettuano tre tiri verso un medesimo bersaglio. La probabilità di colpirlo al primo, al secondo e al terzo colpo sono rispettivamente uguali a $p_1=0.4$, $p_2=0.5$, $p_3=0.7$. Calcolare la probabilità:
+    \begin{itemize}
+        \item Di colpire il bersaglio una sola volta in tre tiri
+        \item Di colpire il bersaglio al più una volta in tre tiri
+        \item Di colpire il bersaglio almeno una volta in tre tiri
+        \item Che il centro sia avvenuto al terzo colpo sapendo che il bersaglio viene colpito una sola volta
+    \end{itemize}
+    \paragraph{Esercizio 15}
+    Un dado equilibrato viene lanciato 3 volte. Calcolare la probabilità che:
+    \begin{itemize}
+        \item Il punteggio del primo lancio non sia divisibile per 3
+        \item Il punteggio somma dei primi due lanci non sia divisibile per 3
+        \item Né il punteggio del primo lancio, né il punteggio somma dei primi due lanci siano divisibili per 3
+    \end{itemize}
+    \newpage
+    \paragraph{Esercizio 16}
+    Abbiamo dei componenti elettronici che provengono da tre diversi centri di produzione, C1, C2 e C3, la cui probabilità di funzionamento è, rispettivamente, $1\over10$, $2\over10$ e $3\over10$. Sappiamo inoltre che il $30\%$ dei componenti provengono da C1, altri $20\%$ da C2 ed i restanti $50\%$ provengono da C3. Calcolare:
+    \begin{itemize}
+        \item La probabilità che preso un componente a caso questo sia funzionante
+        \item La probabilità che un componente preso a caso provenga da C1 avendo osservato che esso è funzionante
+        \item La probabilità che almeno uno tra tre componenti presi a caso sia funzionante
+        \item Il numero minimo di componenti da estrarre affinché la probabilità che almeno uno sia funzionante sia maggiore o uguale a 0.999
+    \end{itemize}
+    \paragraph{Esercizio 17}
+    Si supponga di estrarre contemporaneamente 13 carte da un mazzo di 52 (13 carte di cuori, 13 di picche, 13 di fiori, 13 di quadri). Si calcoli la probabilità che le carte così estratte contengano:
+    \begin{itemize}
+        \item Il tre di cuori
+        \item Una sola carta di quadri
+        \item Tre carte di picche e cinque carte di quadri
+        \item Solo tre figure
+    \end{itemize}
+    \paragraph{Esercizio 19}
+    Da un mazzo regolare di 52 carte (13 cuori, 13 quadri, 13 fiori, e 13 picche) vengono estratte contemporaneamente 3 carte.
+    \\Qual è la probabilità che le tre carte estratte siano tutte di picche?
+    \newpage
+    \paragraph{Esercizio 20}
+    Supponiamo che un’urna contenga 1 pallina rossa e 1 pallina bianca. Una pallina è estratta e se ne osserva il colore. Essa viene poi rimessa nell’urna insieme a 1 pallina dello stesso colore. Sia $R_i$ l’evento {All’$i$-esima estrazione viene estratta una pallina rossa}, analogamente $B_i$ sia l’evento {All’$i$-esima estrazione viene estratta una pallina bianca}. Si calcoli:
+    \begin{itemize}
+        \item $P(R_2)$ e $P(R_3)$
+        \item Sapendo che la seconda estratta è una pallina rossa, è più probabile che la prima pallina estratta fosse rossa o bianca?
+        \item Qual è la probabilità che la prima estratta sia rossa e la seconda bianca?
+    \end{itemize}
+    \paragraph{Esercizio 21}
+    Un’urna contiene 6 palline di cui 3 bianche, 2 rosse ed 1 nera. Si estraggono senza reimmissione tre palline e si vince se una delle tre è nera.
+    \begin{itemize}
+        \item Si calcoli la probabilità di vincere
+        \item Si calcoli la probabilità di vincere sapendo che la pallina nera non è uscita nelle prime due estrazioni
+        \item Sapendo di aver vinto, qual è la probabilità che la pallina nera non sia uscita nelle prime due estrazioni?
+    \end{itemize}
+    \paragraph{Esercizio 22}
+    Il modello «plus» di una chiave USB può presentare due tipi di difetto, difetto di tipo $A$ con probabilità pari a 0.03 e difetto di tipo $B$ con probabilità pari a 0.07, i due tipi di difetto sono indipendenti l’uno dall’altro. Qual è la probabilità che una generica chiave USB
+    \begin{itemize}
+        \item presenti entrambe i difetti?
+        \item sia difettosa?
+        \item presenti il difetto $A$, sapendo che è difettosa?
+        \item presenti uno solo dei difetti, sapendo che è difettosa?
+    \end{itemize}
+    \newpage
+    \paragraph{Esercizio 23}
+    Una roulette semplificata è formata da 12 numeri che sono classificati rosso (R) e nero (N) in base allo schema seguente:
+    \begin{table}[htb]
+        \centering
+        \begin{tabular}{ccccllllllll}
+        \hline
+        1          & 2          & 3          & 4          & 5          & 6          & 7          & 8          & 9          & 10         & 11         & 12         \\ \hline
+        \textbf{R} & \textbf{R} & \textbf{N} & \textbf{N} & \textbf{R} & \textbf{N} & \textbf{N} & \textbf{R} & \textbf{N} & \textbf{N} & \textbf{R} & \textbf{R} \\ \hline
+        \end{tabular}
+        \caption{Schema di estrazione}
+        \label{tab:my-table}
+    \end{table}
+    Siano:
+    \begin{itemize}
+        \item $A = \{esce \ un \ numero \ pari\}$
+        \item $B = \{esce \ un \ numero \ rosso\}$
+        \item $C = \{esce \ un \ numero \leq 6\}$
+        \item $D = \{esce \ un \ numero \leq 8\}$
+    \end{itemize}
+    \FloatBarrier
+    Stabilire:
+    \begin{itemize}
+        \item Se gli eventi $A$, $B$ e $C$ sono a 2 a 2 indipendenti
+        \item Se $A$, $B$ e $C$ costituiscono una famiglia di eventi indipendenti
+        \item Stabilire se $A$, $B$ e $D$ costituiscono una famiglia di eventi indipendenti
+        \item Ponendo $E = \{esce \ un \ numero \ dispari \leq 3\}$, $E$ è indipendente da $A$ e da $D$?
+        \item Supponiamo di sapere che esca un numero rosso, gli eventi $A$ e $C$ sono indipendenti?
+    \end{itemize}
+    \paragraph{Esercizio 24}
+    Da un’urna che contiene 3 palline bianche e 2 palline nere vengono trasferite 2 palline, scelte a caso, in un’altra urna che contiene 4 palline bianche e 4 palline nere. Infine, si estrae una pallina dalla seconda urna.
+    \begin{itemize}
+        \item Trovare la probabilità di estrarre una pallina bianca dalla seconda urna
+        \item Calcolare la probabilità di aver trasferito almeno una pallina bianca se estraiamo una pallina nera dalla seconda urna
+    \end{itemize}
+    \newpage
+    \paragraph{Esercizio 25}
+    Ci sono due urne, la prima urna $U_1$ contiene due dadi a sei facce (dadi onesti), la seconda urna $U_2$ contiene due dadi a sei facce (dadi truccati nel modo seguente: ognuno dei dadi ha tre facce che indicano il numero 6 e le rimanenti 3 il numero 5). Si lancia una moneta onesta e se l’esito del lancio è testa si prendono i dadi dalla prima urna $U_1$ mentre se l’esito è croce si prendono i dadi dalla seconda urna $U_2$, poi, in ogni caso si lanciano i dadi.
+    \begin{itemize}
+        \item Calcolare la probabilità che la somma dei due dadi sia 11
+        \item Sapendo di aver ottenuto un 11 lanciando i due dadi, calcolare la probabilità di aver ottenuto croce lanciando la moneta
+        \item Gli eventi $D_1$ = \{ottengo 6 sul primo dado\} e $D_2$ = \{ottengo 6 sul secondo dado\} sono indipendenti?
+    \end{itemize}
+    \paragraph{Esercizio 26}
+    Nel gioco del lotto ad ogni estrazione che avviene settimanalmente vengono pescate contemporaneamente 5 palline da un’urna contenente 90 palline numerate da 1 a 90 e per il resto indistinguibili. Giovanni ogni settimana gioca l’ambo $\{89,90\}$, cioè Giovanni vince se fra le 5 palline estratte vi sono quelle numerate con 89 e 90.
+    \begin{itemize}
+        \item Calcolare la probabilità di vincere in una singola estrazione
+        \item Se nelle prime 2 estrazioni Giovanni non ha vinto con quale probabilità vincerà almeno una volta nelle prime 10 estrazioni?
+        \item Se nelle prime 10 giocate Giovanni ha vinto tre volte, con quale probabilità ha vinto nelle prime tre giocate?
+    \end{itemize}
+    \paragraph{Esercizio 27}
+    Un’urna contiene 2 palline rosse e 4 palline nere. Due giocatori A e B giocano nel modo seguente: le palline vengono estratte ad una ad una e messe da parte. A vince se l’ultima pallina estratta è rossa, altrimenti vince B.
+    \begin{itemize}
+        \item Qual è la probabilità che A vinca?
+        \item Qual è la probabilità che A vinca sapendo che la prima pallina estratta è rossa?
+        \item Qual è la probabilità che A vinca e che la prima pallina estratta sia rossa?
+    \end{itemize}
+    \paragraph{Esercizio 28}
+    Gli abitanti della località $abc$ raggiungono ogni giorno la città $xyz$ in treno o in macchina. Il $90\%$ degli abitanti di $abc$ arrivano nella città $xyz$ in ritardo (sull’orario previsto). Il $40\%$ di questi (cioè di quelli in ritardo) usano il treno, mentre, il $20\%$ di quelli che NON arrivano in ritardo (sull’orario previsto) usano la macchina
+    \begin{itemize}
+        \item Qual è la probabilità che un abitante di $abc$ usi il treno per raggiungere la città $xyz$ (un dato giorno)?
+        \item Se un abitante di $abc$ usa il treno per raggiungere $xyz$, è più probabile che arrivi in ritardo o non in ritardo?
+    \end{itemize}
+    \paragraph{Esercizio 29}
+    Un mazzo di carte napoletane costituito da 40 carte suddivise in 4 classi (detti “semi”) ciascuna contenente 10 carte numerate. Supponiamo di estrarre “a caso” 8 carte da un tale mazzo.
+    \begin{itemize}
+        \item Calcolare la probabilità di estrarre i 4 “sette”
+        \item Calcolare la probabilità di estrarre al più 2 “sei”
+        \item Calcolare la probabilità di estrarre “4 sette” e al più 2 “sei”
+    \end{itemize}
+    \paragraph{Esercizio 30}
+    Consideriamo un mazzo di 40 carte suddivise in 4 classi (detti “semi”) ciascuna contenente 10 carte numerate da 1 a 10. Ogni mano servita è formata da cinque carte estratte dal mazzo.
+    \begin{itemize}
+        \item Calcolare la probabilità di ricevere una mano che contiene i numeri 6, 7, 8, 9, 10
+        \item Calcolare la probabilità di ricevere una mano che contiene cinque numeri distinti
+    \end{itemize}
+    \newpage
+    \paragraph{Esercizio 31}
+    Ho due urne $A$ e $B$: $A$ contiene 6 palline di cui una numerata 1, due numerate 2 e tre numerate 3 e $B$ contiene 9 palline di cui due numerate 2, tre numerate 3 e quattro numerate 4.
+    \\Lancio un dado regolare: se esce la faccia 6, estraggo una pallina dall’urna $A$. Invece, se non esce faccia 6, estraggo una pallina dall’urna $B$.
+    \begin{itemize}
+        \item Qual è la probabilità di estrarre una pallina numerata 2?
+        \item Se la pallina estratta è numerata 2, qual è la probabilità che il dado lanciato abbia esibito la faccia 6?
+        \item Sia $X$ la variabile aleatoria discreta che rappresenta il numero della pallina estratta. Determinare la densità di $X$
+    \end{itemize}
+    \paragraph{Esercizio 32}
+    Giulio, Carlo e Federico giocano al tiro con l’arco. Si sa che la probabilità che Giulio colpisca il bersaglio è pari a $3/4$, quella che Carlo colpisca il bersaglio è pari ad $1/2$ e quella di Federico è pari ad $1/4$. Si sa inoltre che i risultati dei lanci dei tre arcieri sono indipendenti.
+    \begin{itemize}
+        \item Calcolare la probabilità che nessuno di loro colpisca il bersaglio
+        \item Calcolare la probabilità che esattamente due di loro colpiscano il bersaglio
+        \item Calcolare la probabilità che Giulio colpisca il bersaglio sapendo che esattamente due di loro hanno colpito il bersaglio
+    \end{itemize}
+    \paragraph{Esercizio 33}
+    Un supermercato accetta pagamenti con carte di credito di due soli tipi, $A$ e $B$. Il $25\%$ dei clienti possiede la carta $A$, il $50\%$ la carta B e il $15\%$ possiede entrambe le carte.
+    \begin{itemize}
+        \item Calcolare la probabilità che un cliente scelto a caso possieda almeno una carta di credito accettata dal supermercato
+        \item Calcolare la probabilità che un cliente scelto a caso possieda esattamente una carta di credito accettata dal supermercato
+        \item Se un cliente possiede almeno una carta di credito accettata dal supermercato, qual è la probabilità che sia una carta di credito di tipo $A$?
+    \end{itemize}
+    \newpage
+    \paragraph{Esercizio 34}
+    Scegliamo tre carte a caso fra un mazzo di 52 carte da gioco (divise in quattro semi con ciascuno tre figure: fante, donna, re).
+    \begin{itemize}
+        \item Qual è la probabilità che due siano assi e una sia un dieci?
+        \item Qual è la probabilità che almeno due siano figure?
+        \item Qual è la probabilità che almeno due siano figure e nessuna sia un asso?
+    \end{itemize}
+    \paragraph{Esercizio 35}
+    Uno scommettitore ha nel suo portafoglio una moneta equa ed una moneta con entrambe i lati testa. Egli seleziona in modo casuale una delle due monete, la lancia e ne osserva l’esito testa.
+    \begin{itemize}
+        \item Qual è la probabilità che si tratti della moneta equa?
+        \item Supponiamo che lanci la stessa moneta una seconda volta e che l’esito sia ancora testa. Qual è la probabilità che si tratti della moneta equa?
+        \item Supponiamo che lanci una terza volta la stessa moneta ottenendo croce. Qual è la probabilità che si tratti della moneta equa?
+    \end{itemize}
+    \paragraph{Esercizio 36}
+    In un certo collegio, il $25\%$ degli studenti è stato bocciato in matematica, il $15\%$ è stato bocciato in chimica, e il $10\%$ è stato bocciato sia in matematica che in chimica. Viene scelto a caso uno studente.
+    \begin{itemize}
+        \item Se egli stato bocciato in chimica, qual è la probabilità che sia stato bocciato in matematica?
+        \item Se egli è stato bocciato in matematica, qual è la probabilità che sia stato bocciato in chimica?
+        \item Qual è la probabilità che sia stato bocciato in matematica o in chimica?
+    \end{itemize}
+    \newpage
+    \section{Distribuzioni notevoli}
+    \paragraph{Esercizio 1} 
+    Quattro monete bilanciate vengono lanciate. Assumendo l’indipendenza dei risultati, qual è la probabilità di ottenere due testa e due croce?
+    \paragraph{Esercizio 2}
+    E’ noto che gli item prodotti da una macchina utensile saranno difettosi con probabilità 0.1\\
+    Qual è la probabilità che in un campione di 3 items al più uno sia difettoso?
+    \paragraph{Esercizio 3}
+    Supponiamo che il colore degli occhi di una persona sia determinato in base ad una coppia di geni e che «$d$» rappresenti il gene dominante mentre «$r$» il gene recessivo. Pertanto una persona con la coppia di geni «$dd$» ha dominanza pura, una con «$rr$» ha recessione pura e una con «$dr$» o «$rd$» è ibrida.
+    \\Un bambino riceve un gene da ognuno dei genitori.
+    \\Se rispetto al colore degli occhi i due genitori «ibridi» hanno 4 figli, qual è la probabilità che esattamente 3 dei 4 figli abbiano almeno 1 gene dominante?
+    \paragraph{Esercizio 4}
+    Supponiamo che il numero di errori tipografici presenti in una singola pagina di un libro sia distribuito secondo una Poisson con parametro $\lambda = 1$.
+    \\Si calcoli la probabilità che vi sia almeno un errore in una data pagina.
+    \paragraph{Esercizio 5}
+    In media su un’autostrada si verificano 3 incidenti al giorno.
+    \\Qual è la probabilità che non si verifichino incidenti oggi?
+    \paragraph{Esercizio 6}
+    Un’azienda produce dischetti, la probabilità che un dischetto sia difettoso è pari a 0.01
+    \\L’azienda vende i dischetti in confezioni da 10 e rimborsa l’acquirente se più di 1 dischetto è difettoso.
+    \begin{itemize}
+        \item Quale proporzione delle confezioni sarà restituita?
+        \item Se un acquirente acquista 3 scatole, qual è la probabilità che ne restituisca esattamente una?
+    \end{itemize}
+    \newpage
+    \paragraph{Esercizio 7}
+    Si supponga che la probabilità che un prodotto costruito da una macchina sia difettoso è pari a 0.1
+    \\Si trovi la probabilità che un campione di 10 prodotti contenga al più un prodotto difettoso.
+    \paragraph{Esercizio 8}
+    Un bus arriva ad una data fermata ad intervalli di 15 minuti a partire dalle ore 7:00.
+    \\Poiché il bus passa ogni quarto d’ora, se un passeggero arriva alla fermata in un istante di tempo uniformemente distribuito nell’intervallo 7:00 - 7:30, si determinino:
+    \begin{itemize}
+        \item Probabilità che attenda meno di 5 minuti
+        \item Probabilità che attenda almeno 12 minuti
+    \end{itemize}
+    \paragraph{Esercizio 9}
+    Se $X$ è una variabile distribuita secondo una Normale con $\mu = 3$ e $\sigma^2= 16$, si determini:
+    \begin{itemize}
+        \item $P( X < 11 )$
+        \item $P( X > -1 )$
+        \item $P( 2 < X < 7 )$
+    \end{itemize}
+    \paragraph{Esercizio 10}
+    Un’industria produce su commissione delle sbarre d’acciaio cilindriche, il cui diametro dovrebbe essere di $4 \ cm$, ma che tuttavia sono accettabili se hanno diametro compreso fra $3.95 \ cm$ e $4.05 \ cm$. Il cliente, nel controllare le sbarre fornitegli, constata che il $5\%$ sono di diametro inferiore al minimo tollerato ed il $12\%$ di diametro superiore al massimo tollerato
+    \begin{itemize}
+        \item Supponendo che le misure dei diametri seguano una legge normale, determinarne media e deviazione standard
+        \item Mantenendo la media precedentemente calcolata, determinare quale dovrebbe essere il valore massimo della deviazione standard affinchè la probabilità che le sbarre abbiano un diametro superiore al massimo tollerato sia minore 0.05        
+    \end{itemize}
+    \newpage
+    \paragraph{Esercizio 11}
+    Un'azienda stipula un contratto per vendere barattoli di conserva da $500 \ g$. La quantità di conserva $X$ messa in ciascun barattolo è predeterminata meccanicamente ed è normalmente distribuita con media $\mu$ e deviazione standard $25 \ g$.
+    \begin{itemize}
+        \item A quale valore minimo $\mu$ deve essere tarata la macchina, perché non più del $2\%$ dei barattoli contenga meno di $500 \ g$ di conserva?
+        \item Supponiamo che i barattoli siano di metallo e che il loro peso $Y$ da vuoti segua una distribuzione $N(90,64)$. Se un ispettore pesa i barattoli pieni e scarta quelli il cui peso è inferiore a $590 \ g$, quale percentuale di barattoli non passerà l'ispezione? \\ \textbf{NB}: 64 è la Varianza 
+    \end{itemize}
+    \paragraph{Esercizio 12}
+    Un certo tipo di componenti elettronici viene prodotto da una ditta che utilizza due linee di produzione. La prima di queste produce il $40\%$ dei pezzi ed i pezzi prodotti hanno un tempo di vita che segue una legge esponenziale di parametro $\lambda_1=1.5$. La seconda invece produce il $60\%$ dei pezzi ed i pezzi prodotti hanno tempo di vita che segue una legge esponenziale di parametro $\lambda_2=2$. Un componente viene scelto a caso tra quelli prodotti dalle due linee e indichiamone con $X$ il suo tempo di vita.
+    \begin{itemize}
+        \item Qual è la probabilità che sia ancora funzionante al tempo $t=1$?
+        \item Sapendo che è ancora funzionante al tempo $t=1$, qual è la probabilità che esso sia ancora funzionante al tempo $t=2$?
+        \item Qual è la probabilità che su 7 componenti scelti a caso e in modo indipendente l’uno dall’altro, almeno 3 siano ancora funzionanti al tempo $t=1$?
+        \item Supponiamo di scegliere a caso ed in modo indipendente dei componenti. Qual è la probabilità che il primo pezzo non funzionante al tempo $t=1$ sia il secondo esaminato?
+    \end{itemize}
+    \newpage
+    \paragraph{Esercizio 13}
+    Da un mazzo di 52 carte (13 di picche, 13 di cuori, 13 di fiori e 13 di quadri) ne vengono estratte cinque con reinserimento. Si è interessati alla variabile casuale $X$ che descrive il numero di carte di cuori ottenute nelle estrazioni. Determinare:
+    \begin{itemize}
+        \item il valore atteso e la varianza della variabile $X$
+        \item la probabilità di estrarre tre carte di cuori
+        \item la probabilità di estrarre almeno tre carte di cuori
+        \item la probabilità di estrarre al più tre carte di cuori
+    \end{itemize}
+    \paragraph{Esercizio 14}
+    L’istante d’arrivo dell’autobus è uniformemente distribuito tra le 10:00 e le 10:30. Tu arrivi alla fermata dell’autobus alle 10:00.
+    \begin{itemize}
+        \item Qual è la probabilità che tu debba aspettare più di 10 minuti?
+        \item Quanto tempo aspetti in media? Con quale deviazione standard?
+        \item Se l’autobus non è ancora passato alle 10:10, qual è la probabilità che tu debba aspettare almeno altri 10 minuti?
+        \item Supponi di arrivare alla fermata dell’autobus alle 10:00 per 100 giorni. Calcola, in modo approssimato, la probabilità che il tempo totale speso ad attendere l’autobus sia superiore a 1 giorno
+    \end{itemize}
+    \paragraph{Esercizio 15}
+    Il numero $X$ di telefonate ricevute nell'intervallo di tempo $[0, t_0]$ è una variabile aleatoria distribuita secondo una distribuzione di Poisson con parametro $\lambda=t_0$.
+    \\Calcolare la probabilità $P(2 \leq X \leq 4)$ di ricevere da due a quattro telefonate (2 e 4 inclusi) entro l'istante $t_0=1$.
+    \paragraph{Esercizio 16}
+    In un dato canale di comunicazione sappiamo che la probabilità di ricevere in modo errato un singolo messaggio è pari a 0.01. Sapendo che viene inviata una sequenza di 150 messaggi, e che i messaggi trasmessi sono stocasticamente indipendenti tra loro, ci si chiede quale sia la probabilità che due dei messaggi ricevuti siano errati.
+    \newpage
+    \paragraph{Esercizio 17}
+    In una certa provincia montuosa si può supporre che il numero $X$ di frane al mese sia una variabile aleatoria con la legge di Poisson di parametro $\lambda=2.3$.
+    \begin{itemize}
+        \item Calcolare la probabilità che ci siano almeno due frane in un dato mese.
+        \item Quanto dovrebbe valere il parametro $\lambda$ affinchè la probabilità che in un mese non ci siano frane sia superiore a $1 \over 2$?
+    \end{itemize}
+    \paragraph{Esercizio 18}
+    Il “Crazy Boat” è un battello a due motori utilizzato per le crociere sul Tamigi. I due motori lavorano indipendentemente e il numero di piccoli guasti in una singola crociera è modellabile tramite una v.a. $X$ di Poisson di parametro $\lambda=1$ per il primo motore, e da una v.a. $Y$ di Poisson di parametro $\lambda=2$ per il secondo.
+    \begin{itemize}
+        \item Qual è la distribuzione della v.a. $X+Y$?
+        \item Calcolare la probabilità che non avvenga alcun guasto in una data crociera
+        \item Partono 10 modelli identici “Crazy Boat”. Calcolare la probabilità che almeno 2 battelli concludano la crociera senza guasti
+    \end{itemize}
+    \newpage
+    \section{Stima di parametri}
+    \paragraph{Esercizio 1} 
+    Si desidera stimare il tempo medio di CPU utilizzato dagli utenti di un server in modo da affermare con il $95\%$ di confidenza che il valore stimato non disti più di $1 \over 2$ secondo dal valore vero.
+    \\Dall’esperienza passata possiamo ipotizzare che il tempo di CPU utilizzato sia distribuito secondo una normale con $\sigma^2=2.25$.
+    \\Quale deve essere la dimensione $n$ del campione?
+    \paragraph{Esercizio 2}
+    Un segnale $\mu$ viene trasmesso da una sorgente $A$ ad una destinazione $B$. Il segnale ricevuto in $B$ è distribuito normalmente con media $\mu$ e varianza $\sigma^2$ incognita. Se vengono trasmessi 9 segnali successivi con valore $\mu$ eguale e vengono ricevuti in $B$ i seguenti valori: 
+    \\5 - 8.5 - 12 - 15 - 7 - 9 - 7.5 - 6.5 - 10.5
+    \\Si calcoli un intervallo di confidenza con il $95\%$ di confidenza per $\mu$.
+    \paragraph{Esercizio 3}
+    Si determini l’intervallo di confidenza al $95\%$ del valore medio del battito cardiaco dei membri di un club di fitness su un campione casuale di 15 individui che ha portato ad ottenere:
+    \\94 - 63 - 58 - 72 - 49 - 92 - 70 - 73 - 69 - 104 - 48 - 66 - 80 - 64 - 77
+    \paragraph{Esercizio 4}
+    Una fabbrica produce alzacristalli elettrici la cui durata di vita si distribuisce Normalmente con varianza $\sigma^2=0.25$. Si supponga di estrarre un campione casuale di 49 pezzi aventi durata media pari a 5.5 anni. Costruire un intervallo di confidenza al $95\%$ per la durata media degli alzacristalli prodotti dalla fabbrica.
+    \paragraph{Esercizio 5}
+    La durata di funzionamento degli utensili prodotti da una macchina segue la distribuzione normale con scarto quadratico medio $\sigma=7$. Un campione casuale di 25 utensili ha presentato una durata di funzionamenti di 5 mesi. Costruire un intervallo di confidenza al $99\%$ per la durata media della popolazione degli utensili prodotti dalla macchina.
+    \newpage
+    \paragraph{Esercizio 6}
+    Un segnale radio viene emesso con frequenza distribuita normalmente e con valore atteso $\mu$ e deviazione standard $30 \ kHz$. Supponendo di osservare la seguente serie di frequenze in kHz:
+    \\610 - 601 - 578 - 615 - 640 - 630 - 618 - 602 - 613 - 610 - 625 - 585 - 622 - 608 - 597
+    \begin{itemize}
+        \item determinare una stima di $\mu$ e la probabilità che la frequenza stia nell’intervallo di estremi 590 kHz e 610 kHz.
+        \item Determinare poi un intervallo di confidenza per $\mu$ al $95\%$. 
+    \end{itemize}
+    \paragraph{Esercizio 7}
+    Tra i pasticcini prodotti artigianalmente in una pasticceria se ne prelevano 100; risulta che il loro peso medio è pari a 35g. Si sa che lo scarto quadratico medio del peso di tutti i pasticcini prodotti dalla pasticceria è pari a 4g.
+    \begin{itemize}
+        \item Si trovi l’intervallo di confidenza per il peso medio di tutti i pasticcini prodotti a livello di confidenza del $98\%$.
+        \item Di quanto deve aumentare la numerosità campionaria se si vuole che l’ampiezza dell’intervallo si dimezzi?
+        \item Si determini quanti pasticcini occorre ancora estrarre se si vuole che lo stimatore del peso medio si discosti dal vero peso medio per meno di 1 grammo con probabilità del $96\%$.
+    \end{itemize}
+    \paragraph{Esercizio 8}
+    Da un lotto di gelati se ne estraggono 100 e se ne calcola in 82g il valore del peso medio. Sapendo che la varianza è pari a 25
+    \begin{itemize}
+        \item si determini l'intervallo di confidenza per il peso medio $\mu$ dei gelati al livello di confidenza del $97\%$
+        \item si determini la probabilità che la differenza in valore assoluto fra la media campionaria e il peso medio $\mu$ dei gelati sia inferiore a 3g.
+    \end{itemize}
+    \newpage
+    \paragraph{Esercizio 9}
+    Si è svolta un'indagine su 100 persone per saggiare l'opinione su una proposta politica. Avendo ottenuto 48 risposte favorevoli:
+    \begin{itemize}
+        \item si determini l'intervallo di confidenza per la proporzione di risposte favorevoli nella popolazione con un livello di confidenza del $97\%$
+        \item si determini quanto deve essere l'ampiezza campionaria se si vuole che la varianza dello stimatore della suddetta proporzione non sia superiore a 0.001, tenendo conto dei risultati ottenuti dall'indagine sulle 100 persone.       
+    \end{itemize}
+    \paragraph{Esercizio 10}
+    In un vivaio ci sono 1000 alberi tra i quali una proporzione incognita $p$ ha contratto una malattia.
+    \begin{itemize}
+        \item Stabilire quanti alberi occorre controllare affinchè l'intervallo di confidenza a livello $1 - \alpha =0.99$ per la proporzione incognita di alberi malati risulti ampio meno di 0.1.
+        \item Si decide di selezionare 100 alberi con riposizione al fine di stimare la proporzione $p$ di alberi che hanno contratto la malattia. Di questi 100 risulta che 40 hanno contratto la malattia. Si calcoli l’intervallo di confidenza per la proporzione $p$ al livello di confidenza del $98\%$.
+        \item Tenendo conto del risultato campionario di cui al punto 2), si determini la numerosità campionaria che assicura che la varianza dello stimatore della proporzione di alberi ammalati sia pari a 0.001.
+    \end{itemize}
+
+    \paragraph{Esercizio 11}
+    Si vuole verificare se la quantità $X$ di una sostanza inquinante emessa dalle marmitte prodotte da un’azienda è contenuta entro i limiti restabiliti. A tal fine, si estrae un campione di 10 marmitte dalla produzione settimanale dell’azienda e attraverso prove su strada si rilevano le seguenti quantità (in mg per Km) della sostanza nociva rilasciate:
+    \\895 902 894 903 901 893 897 908 906 891
+    \\Sapendo che la quantità emessa della sostanza in esame ha distribuzione normale di parametri $\mu$ e $\sigma^2$ incogniti, determinare la stima intervallare di $\sigma^2$ al livello di confidenza del $99\%$
+    \newpage
+    \paragraph{Esercizio 12}
+    Il responsabile del controllo qualità di un’azienda che produce manufatti cementizi è interessato a determinare il diametro dei tubi in calcestruzzo fabbricati in serie. Egli sa che, a causa degli errori di misurazione, la misura che può effettuare con i suoi strumenti è una realizzazione di una variabile casuale $X$ distribuita secondo una normale di media $\mu$ e varianza $\sigma^2$. Dopo aver effettuato 25 misurazioni ottiene che la somma dei valori osservati è pari a 4250 mm, e la varianza è 225.
+    \begin{itemize}
+        \item Calcolare l’intervallo di confidenza con confidenza al $95\%$ per la media $\mu$.
+        \item Determinare la numerosità campionaria necessaria affinché l’intervallo di confidenza per la media del diametro dei tubi al livello del $95\%$ abbia un ampiezza $b=10 \ mm$.
+    \end{itemize}
+    \newpage
+    \section{Test Parametrici}
+    \paragraph{Esercizio 1} Per provare l’ipotesi che una moneta è buona viene adottata la seguente regola di decisione.
+    Si accetta l’ipotesi se il numero di teste in un campione di 100 lanci è comprese tra 40 e 60 inclusi. In caso contrario si rifiuta l’ipotesi.
+    Si determini la probabilità di rifiutare l’ipotesi quando essa è vera.
+    \paragraph{Esercizio 2}
+    Progettare la regola di decisione per provare che l’ipotesi che una moneta è buona, se si prende in considerazione un campione di 64 lanci della moneta e se si considera un livello di significatività dello 0.05
+    \paragraph{Esercizio 3}
+    Una fabbrica produce corde le cui resistenze alla rottura hanno una media di $300 \ N$ e uno scarto quadratico medio di $24 \ N$. Si crede che per mezzo di un recente processo produttivo la resistenza media alla rottura possa essere aumentata. Si determini una regola di decisione per il rifiuto del vecchio processo produttivo al livello di significatività dello 0.01 se si voglio provare 64 corde.
+    \paragraph{Esercizio 4}
+    Si consideri l’esercizio precedente.
+    \\Qual è la probabilità di accettare il vecchio processo produttivo con la regola di decisione stabilita quando in realtà il nuovo processo ha aumentato la resistenza media alla rottura a 310N?
+    \paragraph{Esercizio 5}
+    Una macchina che controlla la qualità di nastri viene valutata efficiente se la deviazione standard della numerosità per cm$^2$ dei difetti sui nastri non è maggiore di 0.15 cm. Il numero di difetti è distribuito secondo una normale.
+    \\Se un campione di 20 nastri porta ad ottenere $\hat{S^2_n} = 0.025$ cm$^2$, si può concludere che la macchina sia efficace con il $90\%$ di confidenza?
+    \newpage
+    \paragraph{Esercizio 6}
+    Sono possibili due scelte di un catalizzatore per effettuare un certo processo chimico. Per controllare se la varianza della resa è la medesima indipendentemente dal catalizzatore si estrae un campione di 10 elementi dove è stato utilizzato il primo catalizzatore, e un campione di 12 elementi dove è stato utilizzato il secondo catalizzatore. Si è ottenuto quanto segue: $\hat{S^2_1} = 0.14$ e $\hat{S^2_2} = 0.28$.
+    E’ possibile rifiutare l’ipotesi di uguale varianza con il $10\%$ di significatività?
+    \paragraph{Esercizio 7}
+    Una compagnia di assicurazioni vuole valutare l’entità media delle richieste di risarcimento danni per incidenti automobilistici. Un’indagine svolta su di un campione di 25 richieste ha dato i seguenti risultati (con $X$ si indica la variabile “richiesta di risarcimento in migliaia di euro”)
+    $$\sum_{i=1}^{25}{X_i} =  112.12$$
+    $$\sum_{i=1}^{25}{X_i^2} =  629.89$$
+    \begin{itemize}
+        \item Stimare l’entità media della richiesta e la varianza delle richieste di risarcimento, giustificando la scelta degli stimatori usati
+        \item Ipotizzando che $X$ abbia distribuzione gaussiana, saggiare, ad un livello di significatività $\alpha = 0.05$ l’ipotesi $H_0$: $\mu=3$ contro l’ipotesi alternativa $H_1$: $\mu>3$
+    \end{itemize}
+    \newpage
+    \paragraph{Esercizio 8}
+    Il processo di riempimento delle confezioni di pasta di una azienda non è perfetto: il peso dichiarato è 500 grammi, ma è plausibile che vi siano confezioni con un peso superiore e altre con un peso inferiore. Un’associazione per la tutela del consumatore vuole verificare se il macchinario che riempie le confezioni è veramente tarato su 500 grammi oppure è tarato su un peso inferiore. Viene selezionato casualmente un campione di 40 confezioni, e ne viene pesato il contenuto; indicato con $X$ il “peso in grammi di una confezione”. Si osserva
+    $$\sum_{i=1}^{40}{X_i} =  19840.02$$
+    $$\sum_{i=1}^{40}{X_i^2} =  9841173.7$$
+    Ipotizzando la normalità distributiva del carattere $X$, si può affermare, ad un livello di significatività dell’$1\%$ che il macchinario è tarato su un peso inferiore a 500 grammi?
+    \paragraph{Esercizio 9}
+    Si esegue un’indagine sulla spesa mensile in cancelleria di un campione di studenti e studentesse di età compresa tra i 15 ed i 18 anni e si osserva che:
+    $$ n_M = 10 \ e \ S^2_M = 210$$
+    $$ n_F = 12 \ e \ S^2_F = 225$$
+    Verificare ad un livello di significatività del $5\%$ se la varianza della spesa mensile in cancelleria delle studentesse è significativamente più grande di quella degli studenti.
+    \newpage
+    \paragraph{Esercizio 10}
+    Vengono collezionati i seguenti valori di peso ed altezza per 10 individui
+    \begin{table}[!htb]
+        \centering
+        \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
+        \hline
+        \textbf{Peso}                          & 73                       & 68                       & 71                       & 82  & 87  & 64  & 61  & 79  & 83  & 88  \\ \hline
+        \multicolumn{1}{|c|}{\textbf{Altezza}} & \multicolumn{1}{c|}{172} & \multicolumn{1}{c|}{165} & \multicolumn{1}{c|}{173} & 184 & 190 & 162 & 164 & 181 & 185 & 190 \\ \hline
+        \end{tabular}
+        \caption{Tabella}
+        \label{tab:my-table3}
+    \end{table}
+    \\Sotto ipotesi che peso e altezza siano variabili casuali distribuite secondo una distribuzione normale, verificare ad un livello di significatività del $5\%$ se peso ed altezza risultano correlati.
+    \paragraph{Esercizio 11}
+    Viene condotto uno studio finalizzato a verificare se l’ipnosi è in grado di ridurre il livello di dolore percepito. I risultati ottenuti su un campione casuale di soggetti sono mostrati di seguito:
+    \begin{table}[htb]
+        \centering
+        \begin{tabular}{|c|c|c|c|l|l|l|l|l|}
+        \hline
+         &
+          \textbf{A} &
+          \textbf{B} &
+          \textbf{C} &
+          \textbf{D} &
+          \textbf{E} &
+          \textbf{F} &
+          \textbf{G} &
+          \textbf{H} \\ \hline
+        \multicolumn{1}{|l|}{\textbf{PRIMA}} &
+          \multicolumn{1}{l|}{6,6} &
+          \multicolumn{1}{l|}{6,5} &
+          \multicolumn{1}{l|}{9,0} &
+          10,3 &
+          11,3 &
+          8,1 &
+          6,3 &
+          11,6 \\ \hline
+        \textbf{DOPO} &
+          6,8 &
+          2,4 &
+          7,4 &
+          8,5 &
+          8,1 &
+          6,1 &
+          3,4 &
+          2,0 \\ \hline
+        \end{tabular}
+        \caption{Schema}
+        \label{tab:my-table2}
+    \end{table}
+    \\Per ogni soggetto vengono riportati i livelli di dolore percepiti prima e dopo ipnosi.
+    \\Si determini con livello di significatività del $5\%$ se il livello di dolore medio è inferiore dopo aver
+    ipnotizzato il soggetto.
+    \paragraph{Esercizio 12}
+    Due meli, A e B, producono frutti con pesi variabili. Si sa che il peso delle mele prodotte è una variabile aleatoria distribuita normalmente. Vengono raccolti e pesati 10 frutti dal melo $A$ e 15 frutti dal melo $B$, ottenendo le seguenti stime puntuali
+    $$\overline{x_A} = 75 \ e \ s^2_A = 2.8$$
+    $$\overline{x_B} = 70 \ e \ s^2_B = 1.5$$
+    Si determini con livello di significatività del $5\%$ se i pesi medi dei frutti prodotti dai due meli sono differenti.
+    \newpage
+    \section{Test non parametrici}
+    \paragraph{Esercizio 1}
+    Un campione di dimensione 10, collezionato sul valore assunto dalla variabile aleatoria $X$ ha fornito i seguenti valori:
+    \\21 - 23 - 20 - 18 - 28 - 30 - 20 - 15 - 13 - 12
+    \\Controllare con Kolmogorov-Smirnov, con significatività 0.1, l’ipotesi che $X$ sia distribuita secondo una distribuzione uniforme [10,40].
+    \paragraph{Esercizio 2}
+    Un campione di numerosità 5 estratto da una popolazione $X$ ha fornito i seguenti valori:
+    \\6.2 - 8.8 - 9.4 - 13.6 - 10
+    \\Controllare con Kolmogorov-Smirnov e livello di significatività 0.1 l’ipotesi che $X$ sia distribuita:
+    \begin{itemize}
+        \item Secondo una uniforme [0, 20]
+        \item Secondo un’esponenziale di parametro $\lambda = 0.1$.
+    \end{itemize}
+    \paragraph{Esercizio 3}
+    Un campione di dimensione 30 estratto da una popolazione $X$ ha fornito i seguenti valori:
+    \\2.03 - 9.82 - 2.50 - 6.14 - 4.44 - 4.62 - 10.10 - 7.34 - 8.31 - 8.32 - 16.46 - 3.61 - 16.55 - 15.49 - 17.87 - 6.93 - 10.96 - 4.53 - 17.72 - 7.52 - 4.69 - 6.70 - 16.24 - 6.19 - 13.14 - 16.73 - 10.64 - 11.53 - 2.78 - 15.36
+    \\Controllare con il metodo del Chi-Quadro, con significatività 0.01, l’ipotesi che $X$ sia distribuito secondo un’uniforme con parametri [0,20]. Dividere l’intervallo in 4.
+    \paragraph{Esercizio 4}
+    Un campione di dimensione 80 estratto da una popolazione $X$ ha fornito i conteggi indicati nella tabella seguente, conteggio di casi che assumono valore in 4 intervalli da 1 a 4 aventi egual ampiezza:
+    \begin{table}[!htb]
+        \centering
+        \begin{tabular}{|l|l|l|l|l|}
+        \hline
+        \textbf{$I_i$}                       & 1                       & 2                       & 3                       & 4  \\ \hline
+        \multicolumn{1}{|c|}{\textbf{$n_i$}} & \multicolumn{1}{c|}{15} & \multicolumn{1}{c|}{22} & \multicolumn{1}{c|}{18} & 25 \\ \hline
+        \end{tabular}
+        \caption{Tabella}
+        \label{tab:my-table4}
+    \end{table}
+    \\Controllare con il metodo del Chi-Quadro, con significatività 0.05, l’ipotesi che $X$ sia uniformemente distribuita su [1,4].
+    \paragraph{Esercizio 5}
+    Si vuole controllare l’effetto di una terapia su due gruppi di animali da laboratorio ammalati. I dati di cui si dispone sono i seguenti:
+    \begin{table}[!htb]
+        \centering
+        \begin{tabular}{l|c|c|}
+        \cline{2-3}
+                                                     & \multicolumn{1}{l|}{\textbf{Animali non guariti}} & \multicolumn{1}{l|}{\textbf{Animali guariti}} \\ \hline
+        \multicolumn{1}{|l|}{\textbf{Con terapia}}   & 22                                                & 48                                            \\ \hline
+        \multicolumn{1}{|c|}{\textbf{Senza terapia}} & 24                                                & 26                                            \\ \hline
+        \end{tabular}
+        \caption{Tabella}
+        \label{tab:my-table5}
+    \end{table}
+    \\Controllare l’ipotesi che la terapia sia efficace, con un livello di significatività $\alpha=0.05$.
+    \paragraph{Esercizio 6}
+    Si desidera controllare l’ipotesi di indipendenza tra due caratteri discreti $X$ ed $Y$ di una popolazione. Il campione, di numerosità 150, ha fornito i conteggi riportati in tabella:
+    \begin{table}[!htb]
+        \centering
+        \begin{tabular}{c|c|c|c|}
+        \cline{2-4}
+        \multicolumn{1}{l|}{X\textbackslash{}Y} & \textbf{0} & \textbf{1} & \textbf{2} \\ \hline
+        \multicolumn{1}{|c|}{\textbf{-1}}       & 25         & 15         & 10         \\ \hline
+        \multicolumn{1}{|c|}{\textbf{0}}        & 20         & 30         & 25         \\ \hline
+        \multicolumn{1}{|c|}{\textbf{1}}        & 5          & 15         & 5          \\ \hline
+        \end{tabular}
+        \caption{Tabella}
+        \label{tab:my-table6}
+    \end{table}
+    \\Controllare l’ipotesi di indipendenza di $X$ ed $Y$ con un livello di significatività 0.05
+    \paragraph{Esercizio 7}
+    Sono stati ottenuti dall’anagrafe i dati relativi ai primi tre figli di 1054 famiglie con almeno tre figli. Ne risulta che 157 famiglie hanno tre figli maschi, 371 due maschi e una femmina, 362 un maschio e due femmine, 164 tre femmine.
+    \\Questi dati sono compatibili con l’ipotesi che ogni figlio nasca maschio (o femmina) con probabilità 1/2 indipendentemente dagli altri? (significatività $\alpha=0.1$)
+    \newpage
+    \paragraph{Esercizio 8}
+    Sospettiamo che un dado utilizzato ad un tavolo da gioco di un famoso Casinò non sia equo. Per verificare il sospetto ci appostiamo al tavolo in questione e ne osserviamo il seguente esito di 60 lanci:
+    \begin{table}[!htb]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{ESITO}      & 1 & 2  & 3 & 4 & 5  & 6  \\ \hline
+        \textbf{OCCORRENZA} & 9 & 14 & 7 & 9 & 10 & 11 \\ \hline
+        \end{tabular}
+        \caption{Tabella}
+        \label{tab:my-table7}
+    \end{table}
+    \\Cosa possiamo concludere circa il nostro sospetto che il dado non sia equo? (significatività $\alpha$=0.05)
+    \paragraph{Esercizio 9}
+    Una azienda afferma che un integratore di sua ideazione è in grado di influire sul livello di colesterolo nel sangue, per tale ragione viene prodotto uno studio dell’azienda medesima dove a 10 individui è stato misurato il livello del colesterolo prima di assumere l’integratore in questione e dopo 2 settimane di assunzione del medesimo. Si è ottenuto quanto segue:
+    \begin{table}[!htb]
+        \centering
+        \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|}
+        \cline{2-11}
+        \multicolumn{1}{l|}{}                & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} \\ \hline
+        \multicolumn{1}{|c|}{\textbf{PRIMA}} & 225        & 310        & 287        & 249        & 345        & 288        & 247        & 268        & 213        & 332         \\ \hline
+        \multicolumn{1}{|c|}{\textbf{DOPO}}  & 210        & 301        & 291        & 212        & 307        & 290        & 216        & 245        & 195        & 301         \\ \hline
+        \end{tabular}
+        \caption{Tabella}
+        \label{tab:my-table8}
+    \end{table}
+    \\Cosa possiamo concludere circa l’affermazione dell’azienda? (significatività $\alpha=0.05$)
+    \newpage
+    \paragraph{Esercizio 10}
+    Una azienda afferma che un integratore di sua ideazione è in grado di influire sul livello di colesterolo nel sangue, per tale ragione viene prodotto uno studio dell’azienda medesima dove è stato misurato il livello del colesterolo a 15 individui che non assumono l’integratore e a 10 individui che invece assumono l’integratore. Si è ottenuto quanto segue:
+    \begin{table}[!htb]
+        \centering
+        \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|}
+        \cline{2-11}
+        \multicolumn{1}{l|}{}                 & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} \\ \hline
+        \multicolumn{1}{|c|}{\textbf{Int}}    & 225        & 310        & 287        & 249        & 345        & 288        & 247        & 277        & 267        & 194         \\ \hline
+        \multicolumn{1}{|c|}{\textbf{No int}} & 210        & 301        & 291        & 212        & 307        & 290        & 216        & 312        & 206        & 185         \\ \hline
+        \end{tabular}
+        \label{tab:my-table10}
+    \end{table}
+    \begin{table}[!htb]
+        \centering
+        \begin{tabular}{c|c|c|c|c|c|}
+        \cline{2-6}
+        \multicolumn{1}{l|}{}                 & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} \\ \hline
+        \multicolumn{1}{|c|}{\textbf{Int}}    &             &             &             &             &             \\ \hline
+        \multicolumn{1}{|c|}{\textbf{No int}} & 199         & 204         & 245         & 195         & 301         \\ \hline
+        \end{tabular}
+        \caption{Tabella}
+        \label{tab:my-table11}
+        \end{table}
+    \\Cosa possiamo concludere circa l’affermazione dell’azienda? (significatività $\alpha=0.1$)
+    \paragraph{Esercizio 11}
+    La tabella sottostante riporta il rango dello Human Development Index (HDI) e dell’Income per 10 Paesi.
+    \begin{table}[!htb]
+        \centering
+        \begin{tabular}{c|c|c|}
+        \cline{2-3}
+        \multicolumn{1}{l|}{}                    & \multicolumn{2}{c|}{RANGO}     \\ \hline
+        \multicolumn{1}{|l|}{Paese}              & \textbf{Income} & \textbf{HDI} \\ \hline
+        \multicolumn{1}{|c|}{\textbf{Norvegia}}  & 3               & 1            \\ \hline
+        \multicolumn{1}{|c|}{\textbf{Islanda}}   & 2               & 2            \\ \hline
+        \multicolumn{1}{|c|}{\textbf{Svezia}}    & 10              & 3            \\ \hline
+        \multicolumn{1}{|c|}{\textbf{Australia}} & 8               & 4            \\ \hline
+        \multicolumn{1}{|c|}{\textbf{Olanda}}    & 5               & 5            \\ \hline
+        \multicolumn{1}{|c|}{\textbf{Belgium}}   & 7               & 6            \\ \hline
+        \multicolumn{1}{|c|}{\textbf{USA}}       & 1               & 7            \\ \hline
+        \multicolumn{1}{|c|}{\textbf{Canada}}    & 6               & 8            \\ \hline
+        \multicolumn{1}{|c|}{\textbf{Giappone}}  & 9               & 9            \\ \hline
+        \multicolumn{1}{|c|}{Svizzera}           & 4               & 10           \\ \hline
+        \end{tabular}
+        \caption{Tabella}
+        \label{tab:my-table12}
+    \end{table}
+    \\Cosa possiamo concludere circa la correlazione tra Income e HDI? (significatività $\alpha=0.1$)
+    \paragraph{Esercizio 12}
+    Pazienti leucemici vengono sottoposti a due trattamenti $A$ e $B$. Il conteggio delle piastrine (103) viene riportato nella tabella.
+    \begin{table}[!htb]
+        \centering
+        \begin{tabular}{|c|l|l|l|l|l|l|}
+        \hline
+        Trattamento & \multicolumn{6}{c|}{\textbf{PAZIENTI}}        \\ \hline
+        \textbf{A}  & 20,50 & 22,53 & 25,70 & 13,23 & 29,67 & 24,46 \\ \hline
+        \textbf{B}  & 10,56 & 28,13 & 19,94 & 11,03 & 8,09  & 12,95 \\ \hline
+        \end{tabular}
+        \label{tab:my-table13}
+    \end{table}
+    \begin{table}[!htb]
+        \centering
+        \begin{tabular}{|c|l|l|l|l|l|l|}
+        \hline
+        Trattamento & \multicolumn{6}{c|}{\textbf{PAZIENTI}}        \\ \hline
+        \textbf{A}  & 26,07 & 19,35 & 17,81 & 16,00 & 13,50 & 32,90 \\ \hline
+        \textbf{B}  & 21,14 & 32,50 & 10,90 &       &       &       \\ \hline
+        \end{tabular}
+        \caption{Tabella}
+        \label{tab:my-table14}
+    \end{table}
+    \\Possiamo affermare che tali conteggi provengano dalla stessa distribuzione? (significatività $\alpha=0.05$)
+\end{document}
