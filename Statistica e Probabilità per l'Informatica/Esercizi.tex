@@ -733,7 +733,7 @@
     \newpage
     \subsection{Test parametrico sulla differenza delle medie di due popolazioni $\mu_X - \mu_Y$}
     \paragraph{Statistica} 
-    $$T_n = {{(\overline{X}_n - \overline{Y}_m) - \mu} \over \sqrt{{(n+m)(nS_{X,n}^2+mS_{Y,m}^2)}\over{nm(n+m+2)}}} \sim t^{n+m-2}$$
+    $$T_n = {{(\overline{X}_n - \overline{Y}_m) - \mu} \over \sqrt{{(n+m)(nS_{X,n}^2+mS_{Y,m}^2)}\over{nm(n+m-2)}}} \sim t^{n+m-2}$$
     \textbf{NB}: $S^2_{X,n}$ e $S^2_{Y,m}$ sono varianze campionarie \textbf{NON} corrette
     \\\textbf{NB}: Le due popolazioni abbiano \textbf{identica varianza} anche se sconosciuta
     $$Z_{n,m} = {{\overline{X}_n - \overline{Y}_m - \mu}\over \sqrt{{\sigma_X^2 \over n}+{\sigma_Y^2 \over m}}} \sim N(0,1)$$
@@ -742,9 +742,9 @@
     $$C_{T_{n,m} = Z_{n, m}}'' = (-\infty, -t^{n+m-2}_{1-\alpha})$$
     $$C_{T_{n,m} = Z_{n, m}}''' = (t^{n+m-2}_{1-\alpha}, +\infty)$$
     \paragraph{Intervallo di confidenza}
-    $$(\overline{X}_n - \overline{Y}_m) -t^{n+m-2}_{1-{\alpha \over 2}}\sqrt{{(n+m)(nS_{X,n}^2+mS_{Y,m}^2)}\over{nm(n+m+2)}}$$
+    $$(\overline{X}_n - \overline{Y}_m) -t^{n+m-2}_{1-{\alpha \over 2}}\sqrt{{(n+m)(nS_{X,n}^2+mS_{Y,m}^2)}\over{nm(n+m-2)}}$$
     $$\leq \mu \leq$$ 
-    $$ (\overline{X}_n - \overline{Y}_m) + t^{n+m-2}_{1-{\alpha \over 2}}\sqrt{{(n+m)(nS_{X,n}^2+mS_{Y,m}^2)}\over{nm(n+m+2)}}$$
+    $$ (\overline{X}_n - \overline{Y}_m) + t^{n+m-2}_{1-{\alpha \over 2}}\sqrt{{(n+m)(nS_{X,n}^2+mS_{Y,m}^2)}\over{nm(n+m-2)}}$$
     \newpage
     \subsection{Test parametrico sull'uguaglianza delle varianze di due popolazioni}
     \paragraph{Statistica} $V_{n, m} = {\hat{S^2_{X,n}} \over \hat{S^2_{Y,m}}} \sim F_{n-1, m-1}$
@@ -757,4 +757,55 @@
     $$\hat{T}_n = R_n \cdot \sqrt{{n-2}\over{1- R_n^2}} \sim t^{n-2}$$
     \paragraph{Regione critica}
     $$C_{\hat{T}_n} = (-\infty, -t_{1-{\alpha \over 2}}^n-2) \cup (t_{1-{\alpha \over 2}}^n-2, +\infty)$$
+
+    \newpage
+    \subsection{Test Bontà Adattamento di Kolmogorov-Smirnov}
+    \begin{enumerate}
+        \item Ordinare dati - Riga 1
+        \item $F(t)$ - Riga 2
+        \item $\hat{F}_{X, n}(t)$ - Riga 3, $\hat{F}_{X, n}(< t)$ - Riga 4
+        \item $D_n = sup|F(t) - \hat{F}_{X, n}(t)|$
+        \item $C_{D_n} = (d_{1-\alpha}, 1]$
+    \end{enumerate}
+    \subsection{Test Bontà Adattamento Chi-Quadro}
+    \begin{enumerate}
+        \item Dividere in intervalli $I_k = [t_k, t_{k+1})$
+        \item Per ogni intervallo determinare quante realizzazioni ci cadono $n_k$
+        \item Per ogni intervallo determinare $p_k = F(t_{k+1}) - F(t_k)$
+        \item $W = \sum_{i=1}^k {{(n_k - np_k)^2}\over{np_k}}$
+        \item $C_{W} = (\chi^2_{1-\alpha, k-1}, +\infty]$
+    \end{enumerate}
+    \subsection{Test confr. distr. due pop. Segni}
+    \begin{enumerate}
+        \item $S_n = S^{+} - S^{-}$
+        \item $C_{S_n} = (-\infty, -z_{1-{\alpha \over 2}} {{n-S^{=}}\over 2}) \cup (z_{1-{\alpha \over 2}}{{n-S^{=}}\over 2}, +\infty)$
+    \end{enumerate}
+    \newpage
+    \subsection{Test confr. distr. due pop. Ranghi di Wilcoxon}
+    \begin{enumerate}
+        \item Ordinare dati e metterli tutti nella stessa riga
+        \item Segnare POS, RANGO, PROVENIENZA (X, Y)
+        \item $U_x = nm + {{n(n+1)}\over 2} - R_x$, $R_x$ Somma ranghi X
+        \item $U_y = nm + {{m(m+1)}\over 2} - R_y$, $R_y$ Somma ranghi Y
+        \item $U = min\{U_x, U_y\}$
+        \item $\hat{Z}_{n, m} = {{U - {nm \over 2}}\over \sqrt{{n \cdot m \cdot (n+m+1)} \over 12 }}$
+        \item $C = (-\infty, -z_{1-{\alpha \over 2}}) \cup (z_{1-{\alpha \over 2}}, +\infty)$
+    \end{enumerate}
+    \subsection{Test Chi-Quadro indipendenza}
+    \begin{enumerate}
+        \item Tabella frequenze relative
+        \item Frequenze marginali $f^X_a, f^X_b, f^Y_a, f^Y_b$
+        \item Tabella incroci $f^X_a \cdot f^Y_a$, $f^X_b \cdot f^Y_b$...
+        \item $W = n \sum_{k=1}^{M_X} \sum_{j=1}^{M_Y} {{(f_{k,j} - f_k^X \cdot f_j^Y)} \over f_k^X \cdot f_j^Y}$
+        \item $n \cdot {(Prima cella 1T - Prima cella 2T)^2 \over Prima cella 2T} + {(Seconda cella 1T - Seconda cella 2T)^2 \over Seconda cella 2T} \dots$
+        \item $C = (\chi^2_{1-\alpha, (M_x - 1)(M_y - 1)}, +\infty)$
+    \end{enumerate}
+    \subsection{Test di Correlazione dei ranghi $R_s$ di Spearman}
+    \begin{enumerate}
+        \item Ad ogni coppia di dati assegnare la coppia di ranghi
+        \item $d_i^2 = (r_i^X - r_i^Y)^2$
+        \item $R_s = 1 - {{6\sum_{i = 1}^n d_i^2}\over{n^3 - n}}$
+        \item $\tilde{T}_n = R_s \cdot \sqrt{{n-2}\over{1- R_s^2}}$
+        \item $C = (-\infty, -t_{1-{\alpha \over 2}}^{n-2}) \cup (t_{1-{\alpha \over 2}}^{n-2}, +\infty)$
+    \end{enumerate}
 \end{document}
