@@ -678,4 +678,83 @@
         \label{tab:my-table14}
     \end{table}
     \\Possiamo affermare che tali conteggi provengano dalla stessa distribuzione? (significatività $\alpha=0.05$)
+
+    \newpage
+    \section{Formulario}
+    \subsection{Test parametrico su binomiale}
+    \paragraph{Statistica} $Z_n = {{X-\mu} \over \sigma} \sim N(0, 1) $
+    \paragraph{Regione critica} 
+    $$C_Z' = (-\infty, -z_{1-{\alpha \over 2}}) \cup (z_{1-{\alpha \over 2}}, +\infty)$$
+    $$C_Z'' = (-\infty, -z_{1-\alpha})$$
+    $$C_Z''' = (z_{1-\alpha}, +\infty)$$
+    \subsection{Test parametrico sulla media $\mu$}
+    \subsubsection{Normalmente Distribuita e $\sigma^2$ nota}
+    \paragraph{Statistica} $Z_n = {{\overline{X_n}-\mu} \over {\sigma \over \sqrt{n}}} \sim N(0,1)$
+    \paragraph{Regione critica} 
+    $$C_{Z_n}' = (-\infty, -z_{1-{\alpha \over 2}}) \cup (z_{1-{\alpha \over 2}}, +\infty)$$
+    $$C_{Z_n}'' = (-\infty, -z_{1-\alpha})$$
+    $$C_{Z_n}''' = (z_{1-\alpha}, +\infty)$$
+    \paragraph{Statistica} $\overline{X_n} \sim N(\mu, {\sigma \over \sqrt{n}})$
+    \paragraph{Regione critica} 
+    $$C_{\overline{X}_n}' = (-\infty, -z_{1-{\alpha \over 2}} {\sigma \over \sqrt{n}} + \mu_0) \cup (z_{1-{\alpha \over 2}}{\sigma \over \sqrt{n}} + \mu_0, +\infty)$$
+    $$C_{\overline{X}_n}'' = (-\infty, -z_{1-\alpha}{\sigma \over \sqrt{n}} + \mu_0)$$
+    $$C_{\overline{X}_n}''' = (-z_{1-\alpha}{\sigma \over \sqrt{n}} + \mu_0, +\infty)$$
+    \newpage
+    \subsubsection{Normalmente Distribuita e $\sigma^2$ non nota}
+    \paragraph{Statistica} $T_n = {{\overline{X_n}-\mu} \over {\hat{S_n} \over \sqrt{n}}} \sim t^{n-1}$
+    \paragraph{Regione critica} 
+    $$C_{T_n}' = (-\infty, -t^{n-1}_{1-{\alpha \over 2}}) \cup (t^{n-1}_{1-{\alpha \over 2}}, +\infty)$$
+    $$C_{T_n}'' = (-\infty, -t^{n-1}_{1-\alpha})$$
+    $$C_{T_n}''' = (t^{n-1}_{1-\alpha}, +\infty)$$
+    \paragraph{Statistica} $\overline{X_n} \sim N(\mu, {\hat{S_n} \over \sqrt{n}})$
+    \paragraph{Regione critica} 
+    $$C_{\overline{X}_n}' = (-\infty, -t^{n-1}_{1-{\alpha \over 2}} {\hat{S_n} \over \sqrt{n}} + \mu_0) \cup (t^{n-1}_{1-{\alpha \over 2}}{\hat{S_n} \over \sqrt{n}} + \mu_0, +\infty)$$
+    $$C_{\overline{X}_n}'' = (-\infty, -t^{n-1}_{1-\alpha}{\hat{S_n} \over \sqrt{n}} + \mu_0)$$
+    $$C_{\overline{X}_n}''' = (t^{n-1}_{1-\alpha}{\hat{S_n} \over \sqrt{n}} + \mu_0, +\infty)$$
+    \subsubsection{Non normalmente distribuita}
+    \paragraph{$n \geq 30$}
+
+    \newpage
+    \subsection{Test parametrico sulla varianza $\sigma^2$}
+    \paragraph{Statistica} $Q_n = {{(n-1)\hat{S_n^2} \over \sigma^2}} \sim \chi^2_{n-1}$
+    \paragraph{Regione critica}
+    $$C_{Q_n}' = (0, q_{\alpha \over 2}^{n-1}) \cup (q_{1-{\alpha \over 2}}^{n-1}, +\infty)$$
+    $$C_{Q_n}'' = (0, q_\alpha^{n-1})$$
+    $$C_{Q_n}''' = (q_{1-\alpha}^{n-1}, +\infty)$$
+    \paragraph{Statistica} $\hat{S_n^2}$
+    \paragraph{Regione critica}
+    $$C_{\hat{S_n^2}}' = (0, q_{\alpha \over 2}^{n-1}{\sigma_o^2 \over {n - 1}}) \cup (q_{1-{\alpha \over 2}}^{n-1}{\sigma_o^2 \over {n-1}}, +\infty)$$
+    $$C_{\hat{S_n^2}}'' = (0, q_\alpha^{n-1}{\sigma_o^2 \over {n-1}}))$$
+    $$C_{\hat{S_n^2}}''' = (q_{1-\alpha}^{n-1}{\sigma_o^2 \over {n-1}}), +\infty)$$
+    \paragraph{Statistica} $S_n^2$
+    $$C_{\hat{S_n^2}}' = (0, q_{\alpha \over 2}^{n-1}{\sigma_o^2 \over {n}}) \cup (q_{1-{\alpha \over 2}}^{n-1}{\sigma_o^2 \over {n}}, +\infty)$$
+    $$C_{\hat{S_n^2}}'' = (0, q_\alpha^{n-1}{\sigma_o^2 \over {n}}))$$
+    $$C_{\hat{S_n^2}}''' = (q_{1-\alpha}^{n-1}{\sigma_o^2 \over {n}}), +\infty)$$
+    \newpage
+    \subsection{Test parametrico sulla differenza delle medie di due popolazioni $\mu_X - \mu_Y$}
+    \paragraph{Statistica} 
+    $$T_n = {{(\overline{X}_n - \overline{Y}_m) - \mu} \over \sqrt{{(n+m)(nS_{X,n}^2+mS_{Y,m}^2)}\over{nm(n+m+2)}}} \sim t^{n+m-2}$$
+    \textbf{NB}: $S^2_{X,n}$ e $S^2_{Y,m}$ sono varianze campionarie \textbf{NON} corrette
+    \\\textbf{NB}: Le due popolazioni abbiano \textbf{identica varianza} anche se sconosciuta
+    $$Z_{n,m} = {{\overline{X}_n - \overline{Y}_m - \mu}\over \sqrt{{\sigma_X^2 \over n}+{\sigma_Y^2 \over m}}} \sim N(0,1)$$
+    \paragraph{Regione critica}
+    $$C_{T_{n,m} = Z_{n, m}}' = (-\infty, -t^{n+m-2}_{1-{\alpha \over 2}}) \cup (t^{n+m-2}_{1-{\alpha \over 2}}, +\infty)$$
+    $$C_{T_{n,m} = Z_{n, m}}'' = (-\infty, -t^{n+m-2}_{1-\alpha})$$
+    $$C_{T_{n,m} = Z_{n, m}}''' = (t^{n+m-2}_{1-\alpha}, +\infty)$$
+    \paragraph{Intervallo di confidenza}
+    $$(\overline{X}_n - \overline{Y}_m) -t^{n+m-2}_{1-{\alpha \over 2}}\sqrt{{(n+m)(nS_{X,n}^2+mS_{Y,m}^2)}\over{nm(n+m+2)}}$$
+    $$\leq \mu \leq$$ 
+    $$ (\overline{X}_n - \overline{Y}_m) + t^{n+m-2}_{1-{\alpha \over 2}}\sqrt{{(n+m)(nS_{X,n}^2+mS_{Y,m}^2)}\over{nm(n+m+2)}}$$
+    \newpage
+    \subsection{Test parametrico sull'uguaglianza delle varianze di due popolazioni}
+    \paragraph{Statistica} $V_{n, m} = {\hat{S^2_{X,n}} \over \hat{S^2_{Y,m}}} \sim F_{n-1, m-1}$
+    \paragraph{Regione critica}
+    $$C_{V_{n,m}}' = \left[0, F_{\alpha \over 2}^{n-1,m-1} \right) \cup \left(F_{1 - {\alpha \over 2}}^{n-1,m-1}, +\infty\right)$$ 
+
+    \subsection{Test parametrico di incorrelazione }
+    \paragraph{Statistica} $$R_n = {{\sum_{i=1}^n(X_i - \overline{X}_n)(Y_i - \overline{Y}_n)}\over{nS_{X,n}S_{Y,n}}}$$
+    \\\textbf{NB}: $S_{X,n}$ e $S_{Y,n}$ sono le \textbf{radici} delle varianze campionarie $S_{X,n}^2$ e $S_{Y,n}^2$
+    $$\hat{T}_n = R_n \cdot \sqrt{{n-2}\over{1- R_n^2}} \sim t^{n-2}$$
+    \paragraph{Regione critica}
+    $$C_{\hat{T}_n} = (-\infty, -t_{1-{\alpha \over 2}}^n-2) \cup (t_{1-{\alpha \over 2}}^n-2, +\infty)$$
 \end{document}
