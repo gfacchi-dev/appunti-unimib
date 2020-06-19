@@ -727,6 +727,7 @@
     $$C_{\hat{S_n^2}}'' = (0, q_\alpha^{n-1}{\sigma_o^2 \over {n-1}}))$$
     $$C_{\hat{S_n^2}}''' = (q_{1-\alpha}^{n-1}{\sigma_o^2 \over {n-1}}), +\infty)$$
     \paragraph{Statistica} $S_n^2$
+    \paragraph{Regione critica}
     $$C_{\hat{S_n^2}}' = (0, q_{\alpha \over 2}^{n-1}{\sigma_o^2 \over {n}}) \cup (q_{1-{\alpha \over 2}}^{n-1}{\sigma_o^2 \over {n}}, +\infty)$$
     $$C_{\hat{S_n^2}}'' = (0, q_\alpha^{n-1}{\sigma_o^2 \over {n}}))$$
     $$C_{\hat{S_n^2}}''' = (q_{1-\alpha}^{n-1}{\sigma_o^2 \over {n}}), +\infty)$$
@@ -750,7 +751,8 @@
     \paragraph{Statistica} $V_{n, m} = {\hat{S^2_{X,n}} \over \hat{S^2_{Y,m}}} \sim F_{n-1, m-1}$
     \paragraph{Regione critica}
     $$C_{V_{n,m}}' = \left[0, F_{\alpha \over 2}^{n-1,m-1} \right) \cup \left(F_{1 - {\alpha \over 2}}^{n-1,m-1}, +\infty\right)$$ 
-
+    $$C_{V_{n,m}}'' = \left[0, F_{\alpha}^{n-1,m-1} \right)$$
+    $$C_{V_{n,m}}'' = \left(F_{1 - {\alpha}}^{n-1,m-1}, +\infty\right)$$
     \subsection{Test parametrico di incorrelazione }
     \paragraph{Statistica} $$R_n = {{\sum_{i=1}^n(X_i - \overline{X}_n)(Y_i - \overline{Y}_n)}\over{nS_{X,n}S_{Y,n}}}$$
     \\\textbf{NB}: $S_{X,n}$ e $S_{Y,n}$ sono le \textbf{radici} delle varianze campionarie $S_{X,n}^2$ e $S_{Y,n}^2$
@@ -808,4 +810,75 @@
         \item $\tilde{T}_n = R_s \cdot \sqrt{{n-2}\over{1- R_s^2}}$
         \item $C = (-\infty, -t_{1-{\alpha \over 2}}^{n-2}) \cup (t_{1-{\alpha \over 2}}^{n-2}, +\infty)$
     \end{enumerate}
+
+    \newpage
+    \subsection{Regressione Lineare}
+    $$A_0 = \overline{Y} - A_1\overline{X}$$
+    $$A_1 = {{\sum_{i=1}^n(X_i - \overline{X})(Y_i - \overline{Y})} \over {\sum_{i=1}^n(X_i - \overline{X})^2}}$$
+    $$S^2_{RES} = {1\over{n-2}} \sum_{i=1}^n(Y_i - \hat{Y}_i)^2$$
+    \subsubsection{Test}
+    \paragraph{Statistica}
+    $$T_0 = {{A_0 - \alpha_o}\over{\sqrt{S^2_{RES}\cdot\left[{1\over n}+ {\overline{X}^2 \over \sum_{i=1}^n(X_i - \overline{X})^2}\right]}}} \sim t_{n-2}$$ 
+    \paragraph{Regione di confidenza}
+    $$\left[\alpha_0 - t_{1-{\alpha \over 2}}\sqrt{S^2_{RES}\left[{1 \over n} + {\overline{X}^2 \over S_x^2}\right]}, \alpha_0 + t_{1-{\alpha \over 2}}\sqrt{S^2_{RES}\left[{1 \over n} + {\overline{X}^2 \over S_x^2}\right]} \right]$$
+    \paragraph{Statistica}
+    $$T_1 = {{A_1 - \alpha_1}\over{\sqrt{S^2_{RES}\cdot\left[{1 \over \sum_{i=1}^n(X_i - \overline{X})^2}\right]}}} \sim t_{n-2}$$ 
+    \paragraph{Regione di confidenza}
+    $$\left[\alpha_1 - t_{1-{\alpha \over 2}}\sqrt{S^2_{RES}{1 \over S_x^2}}, \alpha_1 + t_{1-{\alpha \over 2}}\sqrt{S^2_{RES}{1 \over S_x^2}} \right]$$
+    \subsubsection{Attendibilità del modello lineare}
+    \paragraph{Statistica} $\tilde{F}=(n-2){D_{SP} \over D_{RES}}= {D_{SP} \over S^2{RES}} \sim F_{(1, n-2)}$
+    \newpage
+    \section{Domande aperte}
+    \textbf{Il candidato introduca le rappresentazioni per caratteri bidimensionali con riferimento alla statistica descrittiva}
+    \\[5pt]
+    Sia $S=\{(s_j, u_k) | j = 1, ..., n; k = 1, ..., m\}$ l'insieme delle coppie dei caratteri analizzati
+    \\[12pt]
+    \textbf{Il candidato descriva la legge dei grandi numeri ed il teorema centrale limite fornendone il campo di applicazione (eventualmente con esempio numerico)}
+    \\[5pt]
+    Sia $\{X_i \ | \ i\in N\}$ una successione di V.A. indipendenti ed identicamente distribuite (I.I.D.)
+    \\Se esistono sia valore atteso che varianza finiti, allora la successione delle corrispondenti medie aritmetiche $\{\overline{X}_n \ | \ n\in N\}$ tende al crescere di $n$ ad una variabile che assume il valore $E[X_i] = \mu$.
+    \\Considerata poi una variabile $S_n = X_1 + X_2 + ... + X_n$ vale che $S_n$ converge in distribuzione a $X \sim N(n \cdot \mu, {\sqrt{n} \cdot \sigma })$
+    \\[12pt]
+    \textbf{Il candidato introduca e descriva le rappresentazioni numeriche di dati statistici con riferimento alla statistica descrittiva, frequenza assoluta, frequenza cumulata assoluta ecc.}
+    \\[5pt]
+    L'insieme  dei  dati  viene  denotato  con $E=\{x_1, ..., x_n\}$, mentre quello dei caratteri assumibili (le "modalità"  del  carattere”) viene denotato con $S=\{s_1, ..., s_m\}$.
+    \begin{itemize}
+        \item \textbf{Frequenza assoluta} $f_j$ della modalità $s_j$: Numero di elementi di $E$ aventi valore $s_j$
+        \item \textbf{Frequenza cumulata assoluta} $F_j$ della modalità $s_j$: Somma di $f_j$ e delle frequenze assolute che la precedono
+        \item \textbf{Frequenza relativa} $p_j$ della modalità $s_j$: Rapporto tra $f_j$ e $n$
+        \item \textbf{Frequenza cumulata relativa} $P_j$ della modalità $s_j$: Somma di $p_j$ e delle frequenze relative che la precedono
+    \end{itemize}
+    \newpage
+
+    \noindent\textbf{Il candidato illustri gli indici di tendenza centrale e variabilità}
+    \begin{itemize}
+        \item Moda: Valore per cui è massima la frequenza assoluta
+        \item Media: Momento primo rispetto l'origine $\overline{x} = {X_1 + ... + X_n \over n}$
+        \item Mediana: Valore che, dopo aver ordinato i dati, divide in parti uguali la serie
+        \item Varianza: Valore che indica la dispersione dei dati rispetto la media
+        \item Deviazione standard: Radice quadrata della varianza
+    \end{itemize}
+    
+    \noindent\textbf{Il candidato definisca il concetto di indipendenza stocastica sia nel caso di eventi che nel caso di variabili aleatorie}
+    \\Due eventi si dicono stocasticamente indipendenti se $P(A \cap B) = P(A)P(B)$ oppure $P(A|B)=P(A)$ e $P(B|A) = P(B)$
+    \\Due variabili aleatorie si dicono stocasticamente indipendenti se $F_{X,Y}(t, s) = F_X(t)F_Y(s)$
+    \\[12pt]
+    \textbf{Si introduca il concetto di test di ipotesi, se ne elenchino ed illustrino le principali componenti, si ponga particolare attenzione al concetto di errore di I e II tipo discutendone la relazione esistente}
+    La “verifica di ipotesi” si occupa di validare, sulla base di un campione, un’ipotesi relativa ad una caratteristica della popolazione, la quale può essere rifiutata o no. Le sue caratteristiche principali sono:
+    \begin{itemize}
+        \item $H_0$: Ipotesi nulla
+        \item $H_1$: Ipotesi alternativa
+        \item $X$: Popolazione statistica
+        \item $T = T(X_1, ..., X_n)$: Statistica campionaria di cui è nota la distribuzione quando $H_0$ è falsa
+        \item $\overline{C}$: Regione di accettazione, insieme di valori assumibili da $T$ che portano a non rifiutare $T$
+        \item $C$: Regione critica, insieme di valori assumibili da $T$ che portano a rifiutare $T$
+        \item $\alpha$: Livello di significatività ed è tale che quando $H_0$ è vera allora $T$ assume valori in $C$ con probabilità $\alpha$
+    \end{itemize}
+    Vi sono due tipi di errore dovuti alle osservazioni sul campione in uso: 
+    \begin{itemize}
+        \item \textbf{Errori di prima specie}: Se si rifiuta $H_0$ quando, in realtà, l’ipotesi è vera. La probabilità di compiere tali errori coincide collivello  di  significatività $\alpha$.
+        \item \textbf{Errori di seconda specie}: Se non si rifiuta $H_0$ quando, in realtà, l’ipotesi è falsa. La probabilità di compiere tali errori si denota con $\beta$.
+    \end{itemize}
+    
+
 \end{document}
