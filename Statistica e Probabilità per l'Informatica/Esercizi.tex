@@ -798,7 +798,7 @@
         \item Tabella frequenze relative
         \item Frequenze marginali $f^X_a, f^X_b, f^Y_a, f^Y_b$
         \item Tabella incroci $f^X_a \cdot f^Y_a$, $f^X_b \cdot f^Y_b$...
-        \item $W = n \sum_{k=1}^{M_X} \sum_{j=1}^{M_Y} {{(f_{k,j} - f_k^X \cdot f_j^Y)} \over f_k^X \cdot f_j^Y}$
+        \item $W = n \sum_{k=1}^{M_X} \sum_{j=1}^{M_Y} {{(f_{k,j} - f_k^X \cdot f_j^Y)^2} \over f_k^X \cdot f_j^Y}$
         \item $n \cdot {(Prima cella 1T - Prima cella 2T)^2 \over Prima cella 2T} + {(Seconda cella 1T - Seconda cella 2T)^2 \over Seconda cella 2T} \dots$
         \item $C = (\chi^2_{1-\alpha, (M_x - 1)(M_y - 1)}, +\infty)$
     \end{enumerate}
@@ -879,6 +879,4 @@
         \item \textbf{Errori di prima specie}: Se si rifiuta $H_0$ quando, in realtà, l’ipotesi è vera. La probabilità di compiere tali errori coincide collivello  di  significatività $\alpha$.
         \item \textbf{Errori di seconda specie}: Se non si rifiuta $H_0$ quando, in realtà, l’ipotesi è falsa. La probabilità di compiere tali errori si denota con $\beta$.
     \end{itemize}
-    
-
 \end{document}
