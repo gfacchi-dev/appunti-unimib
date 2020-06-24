@@ -816,17 +816,30 @@
     $$A_0 = \overline{Y} - A_1\overline{X}$$
     $$A_1 = {{\sum_{i=1}^n(X_i - \overline{X})(Y_i - \overline{Y})} \over {\sum_{i=1}^n(X_i - \overline{X})^2}}$$
     $$S^2_{RES} = {1\over{n-2}} \sum_{i=1}^n(Y_i - \hat{Y}_i)^2$$
+    $$c_{x,y} = {{\sum_{i=1}^n(X_i - \overline{X})(Y_i - \overline{Y})}\over{n}}$$
+    $$r_{x,y} = {c_{x,y}\over{s_xs_y}}$$
+    $$R^2 = r_{x,y}^2$$
     \subsubsection{Test}
     \paragraph{Statistica}
     $$T_0 = {{A_0 - \alpha_o}\over{\sqrt{S^2_{RES}\cdot\left[{1\over n}+ {\overline{X}^2 \over \sum_{i=1}^n(X_i - \overline{X})^2}\right]}}} \sim t_{n-2}$$ 
-    \paragraph{Regione di confidenza}
+    \paragraph{Regione di confidenza per $A_0$}
     $$\left[\alpha_0 - t_{1-{\alpha \over 2}}\sqrt{S^2_{RES}\left[{1 \over n} + {\overline{X}^2 \over S_x^2}\right]}, \alpha_0 + t_{1-{\alpha \over 2}}\sqrt{S^2_{RES}\left[{1 \over n} + {\overline{X}^2 \over S_x^2}\right]} \right]$$
+    \paragraph{Regione critica per $T_0$}
+    $$C_{T_0}' = (-\infty, -t^{n-2}_{1-{\alpha \over 2}}) \cup (t^{n-2}_{1-{\alpha \over 2}}, +\infty)$$
+    $$C_{T_0}'' = (-\infty, -t^{n-2}_{1-\alpha})$$
+    $$C_{T_0}''' = (t^{n-2}_{1-\alpha}, +\infty)$$
     \paragraph{Statistica}
     $$T_1 = {{A_1 - \alpha_1}\over{\sqrt{S^2_{RES}\cdot\left[{1 \over \sum_{i=1}^n(X_i - \overline{X})^2}\right]}}} \sim t_{n-2}$$ 
-    \paragraph{Regione di confidenza}
+    \paragraph{Regione di confidenza per $A_1$}
     $$\left[\alpha_1 - t_{1-{\alpha \over 2}}\sqrt{S^2_{RES}{1 \over S_x^2}}, \alpha_1 + t_{1-{\alpha \over 2}}\sqrt{S^2_{RES}{1 \over S_x^2}} \right]$$
+    \paragraph{Regione critica per $T_1$}
+    $$C_{T_1}' = (-\infty, -t^{n-2}_{1-{\alpha \over 2}}) \cup (t^{n-2}_{1-{\alpha \over 2}}, +\infty)$$
+    $$C_{T_1}'' = (-\infty, -t^{n-2}_{1-\alpha})$$
+    $$C_{T_1}''' = (t^{n-2}_{1-\alpha}, +\infty)$$
     \subsubsection{Attendibilità del modello lineare}
     \paragraph{Statistica} $\tilde{F}=(n-2){D_{SP} \over D_{RES}}= {D_{SP} \over S^2{RES}} \sim F_{(1, n-2)}$
+    
+    
     \newpage
     \section{Domande aperte}
     \textbf{Il candidato introduca le rappresentazioni per caratteri bidimensionali con riferimento alla statistica descrittiva}
