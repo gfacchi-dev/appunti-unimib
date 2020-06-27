@@ -1,0 +1,115 @@
+\documentclass[12pt]{article}
+\usepackage[italian]{babel}
+
+\title{Orale APS}
+\author{Giuseppe Facchi}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\newpage
+
+\section{Processi per lo sviluppo software}
+\subsection{Introduzione}
+Un processo per lo sviluppo software definisce un approccio per la costruzione, il rilascio e la manutenzione del software. Esempi:
+\begin{itemize}
+    \item \textbf{Processo a cascata}
+    \item \textbf{UP}
+    \item Scrum
+    \item Spirale
+\end{itemize}
+\subsection{Processo a cascata}
+Il processo software con ciclo di vita \textbf{a cascata} è basato su uno svolgimento \textbf{sequenziale} delle diverse attività.\\
+Questo processo è \textbf{molto soggetto a fallimenti}, perché più si fa grande il software più è difficile implementare nuove features.
+
+\subsection{Sviluppo iterativo ed evolutivo}
+In questo approccio lo sviluppo è organizzato in una serie di mini-progetti brevi, di lunghezza fissa chiamati \textbf{iterazioni}. Il risultato di ciascuna iterazione è un \textbf{sistema eseguibile, testato e integrato}.\\
+\textit{Può essere chiamato anche sviluppo iterativo e incrementale o sviluppo iterativo ed evolutivo}.
+\paragraph{Vantaggi}
+\begin{itemize}
+    \item \textbf{Minore probabilità di fallimento}
+    \item Riduzione \textbf{precoce} dei rischi maggiori
+    \item \textbf{Progresso visibile} fin dall'inizio
+    \item \textbf{Feedback precoce}, con coinvolgimento dell'utente
+\end{itemize}
+\paragraph{Timeboxing:} Le iterazioni hanno una \textbf{lunghezza fissata}
+\subsubsection{Pianificazione iterativa, guidata dal rischio e dal cliente}
+In ciascuna \textbf{iterazione} viene stabilito il piano di lavoro dettagliato per una sola iterazione. In \textit{UP} viene effettuata alla \textbf{fine} di ciascuna iterazione, per decidere il piano dell'iterazione successiva.
+\subsection{UP}
+\textbf{Unified Process} è un processo \textbf{iterativo} per la costruzione di sistemi orientati agli oggetti. In particolare viene ampiamente adottato \textbf{RUP (Rational Unified Process)}, un suo raffinamento.
+\begin{itemize}
+    \item Processo \textbf{iterativo}
+    \item Le pratiche di UP forniscono un esempio di struttura rispetto a come \textbf{eseguire} e dunque come spiegare l'\textbf{OOA/D} \textit{(Object-Oriented Analysis/Design)}
+    \item UP è \textbf{flessibile} e può essere applicato usando un \textbf{approccio leggero e agile} come ad esempio \textbf{Scrum}
+\end{itemize}
+\subsubsection{Le fasi di UP}
+\begin{itemize}
+    \item \textbf{Ideazione:} \textit{NON è la previsione dei requisiti del modello a cascata, ma una fase di fattibilità}
+    \item \textbf{Elaborazione}
+    \item \textbf{Costruzione}
+    \item \textbf{Transizione}
+\end{itemize}
+\subsubsection{Le discipline di UP}
+Una \textbf{disciplina} è un insieme di attività e dei relativi elaborati di una determinata area. In UP un elaborato è un qualsiasi prodotto di lavoro. Ci sono diverse discipline in UP:
+\begin{itemize}
+    \item \textbf{Modellazione del business}: Modello di dominio
+    \item \textbf{Requisiti}: Modello dei Casi d'uso per definire requisiti funzionali e non funzionali
+    \item \textbf{Progettazione}: Modello di Progetto
+\end{itemize}
+\subsection{Agile}
+\textit{Non è possibile dare una definizione precisa di metodo agile perché le pratiche adottate variano notevolmente da metodo a metodo}. \\Una pratica di base è quella che prevede \textbf{iterazioni brevi}, con raffinamenti evolutivi dei piani, dei requisiti e del progetto. \\Lo \textbf{scopo della modellazione e dei modelli} è di \textbf{agevolare la comprensione e la comunicazione, NON di documentare}.
+\subsection{Fase di Ideazione}
+Lo scopo della fase di ideazione è stabilire una visione iniziale comune per gli obiettivi del progetto.
+\begin{itemize}
+    \item Non si definiscono tutti i requisiti nella fase di ideazione
+    \item La maggior parte del'analisi dei requisiti avviene durante la fase di elaborazione
+    \item Modello dei Casi d'Uso
+\end{itemize}
+\newpage
+\section{Requisiti evolutivi}
+Un sistema deve fornire un certo numero di funzionalità, relative alla gestione di alcune tipologie di informazione e al possesso di determinate qualità (sicurezza e prestazioni). Un requisito è una capacità o una condizione a cui il sistema deve essere conforme. 
+\paragraph{Requisiti funzionali} Descrivono il comportamento del sistema in termini di funzionalità fornite ai suoi utenti. Possono essere espressi in forma di casi d'uso.
+\paragraph{Requisiti non funzionali} Non riguardano le specifiche funzioni del sistema, ma sono relativi a proprietà del sistema, ad esempio sicurezza, prestazioni, scalabilità, ecc.
+\subsection{Casi d'uso}
+In generale i casi d'uso sono storie scritte, testuali, di qualche attore che usa un sistema per raggiungere degli obiettivi. I casi d'uso non sono diagrammi, bensì testo.
+\paragraph{Attore} Qualcosa o qualcuno dotato di comportamento, come una persona o un'organizzazione o un sistema informatico.
+\paragraph{Scenario (istanza di caso d'uso)} E' una sequenza specifica di azioni e interazioni tra il sistema e alcuni attori.
+\\[12pt]
+\noindent Un caso d'uso è quindi una collezione di scenari correlati, sia di successo che di fallimento. I casi d'uso sono Requisiti Funzionali.
+\subsubsection{Attori}
+\begin{itemize}
+    \item \textbf{Attore Primario}: Utilizza direttamente ii servizi del SuD (system under discussion) affinché vengano raggiunti gli obiettivi utente.
+    \item \textbf{Attore Finale}: Vuole che il SuD sia utilizzato affinché vengano raggiunti dei suoi obiettivi. Spesso attore primario e finale coincidono (es. Cliente commercio elettronico).
+    \item \textbf{Attore di Supporto}: Offre un servizio al SuD (es. Sistema di autorizzazione al pagamento).
+    \item \textbf{Attore fuori scena}: Non è un attore primario, finale, di supporto (es. Governo). 
+\end{itemize}
+\subsubsection{Notazione: tre formati per i casi d'uso}
+\begin{itemize}
+    \item Formato breve
+    \item Formato informale
+    \item Formato dettagliato
+\end{itemize}
+\subsubsection{Come trovare i casi d'uso}
+\begin{enumerate}
+    \item Scegliere i confini del sistema
+    \item Identificare gli attori primari
+    \item Identificare gli obiettivi di ciascun attore primario
+    \item Definire i casi d'uso che soddisfino gli obiettivi utente
+\end{enumerate}
+\subsubsection{Verificare l'utilità dei casi d'uso}
+\paragraph{Test del capo} Il capo pone una domanda per cui ci sarà una risposta, se la risposta non soddisfa il capo il caso d'uso non è mirato a ottenere i risultati il cui valore sia misurabile. Non è però sempre vero (es. Autenticazione utente, concetto semplice ma difficilmente implementabile)
+\paragraph{Test EBP (Elementary Business Process)} Simile al test del capo. Un processo di business elementare è un'attivitrà svolta da una persona in un determinato tempo e luogo, in risposta a un evento di business, che aggiunge valore e lascia i dati in uno stato consistente.
+\paragraph{Test della dimensione} Un caso d'uso deve essere costituito da più passi.
+\subparagraph{Esempi}
+\begin{itemize}
+    \item \textit{Negoziare un contratto con un fornitore}: Troppo ampio per essere un EBP
+    \item \textit{Gestire una restituzione}: Passa il test del capo, è un EBP, le dimensioni vanno bene
+    \item \textit{Effettuare il login}: Non passa il test del capo
+    \item \textit{Spostare una pedina}: Non passa il test della dimensione
+\end{itemize} 
+
+
+
+\end{document}
