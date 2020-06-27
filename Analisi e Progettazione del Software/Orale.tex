@@ -72,7 +72,7 @@ Lo scopo della fase di ideazione è stabilire una visione iniziale comune per gl
 Un sistema deve fornire un certo numero di funzionalità, relative alla gestione di alcune tipologie di informazione e al possesso di determinate qualità (sicurezza e prestazioni). Un requisito è una capacità o una condizione a cui il sistema deve essere conforme. 
 \paragraph{Requisiti funzionali} Descrivono il comportamento del sistema in termini di funzionalità fornite ai suoi utenti. Possono essere espressi in forma di casi d'uso.
 \paragraph{Requisiti non funzionali} Non riguardano le specifiche funzioni del sistema, ma sono relativi a proprietà del sistema, ad esempio sicurezza, prestazioni, scalabilità, ecc.
-\subsection{Casi d'uso}
+\subsection{Modello dei Casi d'uso}
 In generale i casi d'uso sono storie scritte, testuali, di qualche attore che usa un sistema per raggiungere degli obiettivi. I casi d'uso non sono diagrammi, bensì testo.
 \paragraph{Attore} Qualcosa o qualcuno dotato di comportamento, come una persona o un'organizzazione o un sistema informatico.
 \paragraph{Scenario (istanza di caso d'uso)} E' una sequenza specifica di azioni e interazioni tra il sistema e alcuni attori.
@@ -109,7 +109,76 @@ In generale i casi d'uso sono storie scritte, testuali, di qualche attore che us
     \item \textit{Effettuare il login}: Non passa il test del capo
     \item \textit{Spostare una pedina}: Non passa il test della dimensione
 \end{itemize} 
+\newpage
+\section{Modellazione di dominio}
+Rappresentazione visuale di classi concettuali o di oggetti del mondo reale e delle relazioni tra di essi.
+\subsection{Strumenti per modellazione di dominio}
+Applicando la notazione UML un modello di dominio può essere rappresentato da uno o più diagramma delle classi. Prevede:
+\begin{itemize}
+    \item \textbf{Classi concettuali}: rapprentano cose o concetti del dominio di interesse
+    \item \textbf{Associazioni tra classi}: rappresentano relazioni tra oggetti di due classi
+    \item \textbf{Attributi di classi concettuali}: rappresentano proprietà elementari degli oggetti di una classe
+\end{itemize}
+\subparagraph{Aggregazione e composizione}
+\begin{itemize}
+    \item \textbf{Aggregazione}: Tipo di associazione intero-parte (es. macchina-ruote)
+    \item \textbf{Composizione}: Tipo di forte associazione intero-parte
+    \begin{itemize}
+        \item Ciascuna istanza della parte appartiene a una sola istanza dell'intero alla volta
+        \item Ciascuna parte deve sempre appartenere ad un intero
+        \item La vita delle parti è limitata dall'intero: le parti possono essere create dopo l'intero, ma non prima e possono essere distrutte prima dell'intero, ma non dopo
+    \end{itemize}
+\end{itemize}
+\subsection{Diagramma degli oggetti}
+Mostra un insieme di oggetti con i loro attributi e le loro relazioni in un dato momento.
 
+\section{Diagrammi di interazione (parte di modello dei casi d'uso)}
+\begin{itemize}
+    \item \textbf{Illustrazione dei partecipanti con le Lifelines}: rappresentano un'istanza di una classe
+    \item \textbf{Definizione dei messaggi scambiati tra gli oggetti}
+\end{itemize}
+\subsection{Operazioni di sistema e diagrammi di sequenza di sistema}
+Un diagramma di sequenza di sistema è un elaborato che illustra, per un particolare caso d'uso, eventi di input e di output relativi ai sistemi in discussione con un formato "a steccato" in cui gli oggetti che partecipano all'interazione sono mostrati in alto, uno a fianco dell'altro. Esso costituisce un input per i contratti delle operazioni e soprattutto per la progettazione degli oggetti.
+\\I casi d'uso descrivono il modo in cui gli attori esterni interagiscono con il sistema software che interessa creare. Durante questa interazione, un attore genera \textbf{eventi di sistema}, che costituiscono un input per il sistema, di solito per richiedere l'esecuzione di alcune \textbf{operazioni di sistema}, che sono operazioni che il sistema deve definire proprio per gestire tali eventi.
+\subsubsection{Contratti}
+Le sezioni di un contratto sono:
+\begin{itemize}
+    \item \textbf{Operazione}: Nome e parametri dell'operazione
+    \item \textbf{Riferimenti}: Casi d'uso in cui può verificarsi questa operazione
+    \item \textbf{Pre-condizioni}: Ipotesi sullo stato del sistema prima dell'esecuzione
+    \item \textbf{Post-condizioni}: Descrive i cambiamenti di stato degli oggetti nel modello di dominio dopo il completamento dell'operazione
+\end{itemize}
+\subsection{Diagrammi di comunicazione}
+Mostrano le interazioni tra gli oggetti in un formato a grafo o a rete. in cui gli oggetti possono essere posizionati dovunque nel diagramma.
+
+\subsection{Pro/Contro diagrammi Sequenza/Comunicazione}
+I diagrammi di sequenza sono strumenti più potenti perché:
+\begin{itemize}
+    \item UML è più incentrato sui diagrammi di sequenza
+    \item Più facile vedere la sequenza "call-flow" poiché il tempo trascorre dall'alto verso il basso
+\end{itemize}
+I diagrammi di comunicazione sono strumenti più versatili perché:
+\begin{itemize}
+    \item Effettuare modifiche è più semplice senza modificare l'intero call-flow
+    \item Sono più comodi da disegnare
+\end{itemize}
+\section{Diagramma delle classi di progetto}
+\subsection{Generalizzazione}
+Una generalizzazione è una \textbf{relazione tassonomica} tra un classificatore più generale e un classificatore più specifico. 
+\\\textbf{NON equivale} all'ereditarietà nel \textbf{modello di dominio}
+\\\textbf{Equivale} all'ereditarietà nel \textbf{modello di progettazione}, infatti qui la generalizzazione implica l'ereditarietà
+
+\subsection{Aggregazione e composizione}
+\begin{itemize}
+    \item \textbf{Aggregazione}: Tipo di associazione intero-parte (es. macchina-ruote)
+    \item \textbf{Composizione}: Tipo di forte associazione intero-parte
+    \begin{itemize}
+        \item Ciascuna istanza della parte appartiene a una sola istanza dell'intero alla volta
+        \item Ciascuna parte deve sempre appartenere ad un intero
+        \item La vita delle parti è limitata dall'intero: le parti possono essere create dopo l'intero, ma non prima e possono essere distrutte prima dell'intero, ma non dopo
+    \end{itemize}
+\end{itemize}
+\section{GRASP: Progettazione di oggetti con responsabilità}
 
 
 \end{document}
