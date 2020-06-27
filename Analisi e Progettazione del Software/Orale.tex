@@ -178,7 +178,45 @@ Una generalizzazione è una \textbf{relazione tassonomica} tra un classificatore
         \item La vita delle parti è limitata dall'intero: le parti possono essere create dopo l'intero, ma non prima e possono essere distrutte prima dell'intero, ma non dopo
     \end{itemize}
 \end{itemize}
+\section{RDD}
+RDD (Responsibility-Driven Deployment) è un modello di progettazione oggetti basata su:
+\begin{itemize}
+    \item Responsabilità, astrazione di ciò che si deve saper fare e responsabilità degli oggetti
+    \item Ruoli, obiettivi e capacità che un oggetto o una classe ha di partecipare a una relazione con un altro oggetto
+    \item Collaborazione tra oggetti per raggiungere un obiettivo.
+\end{itemize}
+Ci sono due tipologie di responsabilità, quella di fare e quella di conoscere.La granularità (fine o grossa) rappresenta la specificità delle azioni in base al loro scopo.Le responsabilità vengono assegnate durante la modellazione o durante la codifica. In contesto UML le responsabilità sono individuate mentre si creano i modelli statici e dinamici del sistema.I pattern sono principi generali e soluzioni idiomatiche per la creazione di software, codificati in un formato che descrive il problema e la soluzione
 \section{GRASP: Progettazione di oggetti con responsabilità}
-
-
+I GRASP definiscono nove principi di progettazione OO di base o blocchi di costruzione elementari della progettazione. GRASP è l'acronimo di General Responsibility Assignment Software Patterns, ovvero di "Pattern generali per l'assegnazione di responsabilità nel software". 
+\paragraph{Creator} chi crea un oggetto particolare. In generale, i contenitori creano le cose contenute. La classe padre può contenere o aggregare con una composizione della classe figlia, utilizzarla strettamente o possederne i dati per l’inizializzazione
+\subparagraph{Vantaggi}
+\begin{itemize}
+    \item Creator fornisce un accoppiamento basso, il che implica minori dipendenze di manutenzione e maggiori opportunità di riuso
+\end{itemize}
+\paragraph{Information expert} è la classe che ha le informazioni necessarie per adempiere ad alcune responsabilità (classi rilevanti nel modello di progettazione,altrimenti in quello di dominio o analisi). Le classi che possiedono le informazioni necessarie per soddisfare una richiesta hanno responsabilità. (es. Per calcolare il totale di una vendita vengono chiamate in causa più classi)
+\subparagraph{Vantaggi}
+\begin{itemize}
+    \item L'incapsulamento delle informazioni viene mantenuto, poiché gli oggetti usano le proprie informazioni per adempiere ai propri compiti
+\end{itemize}
+\paragraph{Low Coupling} dipendenza bassa, impatto dei cambiamenti basso e riuso elevato. L’accoppiamento indica quanto fortemente un elemento è connesso ad altri elementi, ha conoscenza di altri elementi e ne dipende.
+\subparagraph{Vantaggi}
+\begin{itemize}
+    \item Una classe o componente con un accoppiamento basso non è influenzata dai cambiamenti nelle altre classi e componenti
+    \item Semplice da capire separatamente dalle altre classi e componenti
+    \item Conveniente da riusare
+\end{itemize}
+\paragraph{High Coesion} indica quanto siano correlate e concentrate le responsabilità di un elemento. Le classi con coesione bassa sono difficili da comprendere, riusare e mantenere.Una classe con coesione alta ha un numero di metodi relativamente basso, con funzionalità altamente correlate e non fa troppo lavoro
+\subparagraph{Vantaggi}
+\begin{itemize}
+    \item Modularità del software
+    \item Riuso delle classi
+    \item Classi facili da mantenere
+\end{itemize}
+\newpage
+\paragraph{Controller} il primo oggetto oltre lo strato di UI che è responsabile di ricevere e gestire un messaggio di un’operazione di sistema. L’oggetto deve rappresentare il sistema oppure uno scenario di un caso d’uso, in modo da verificare la sequenza delle operazioni e lo stato corrente delle attività. La logica è svincolata dall’UI e si possono usare interfacce diverse.
+\subparagraph{Vantaggi}
+\begin{itemize}
+    \item Maggiore potenziale di riuso e interfacce inseribili
+    \item Opportunità di ragionare sullo stato del caso d'uso (gestire le sessioni)
+\end{itemize}
 \end{document}
