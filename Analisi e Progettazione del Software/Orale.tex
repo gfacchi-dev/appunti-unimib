@@ -178,6 +178,14 @@ Una generalizzazione è una \textbf{relazione tassonomica} tra un classificatore
         \item La vita delle parti è limitata dall'intero: le parti possono essere create dopo l'intero, ma non prima e possono essere distrutte prima dell'intero, ma non dopo
     \end{itemize}
 \end{itemize}
+\newpage
+\section{Diagrammi di attività}
+Alcuni flussi di interazioni che devono essere supportati dal sistema possono essere \textbf{particolarmente elaborati e difficili da rappresentare con un caso d’uso}: è possibile utilizzare i diagrammi di attività in questo caso. \\[12pt]Nei diagrammi delle attività vengono rappresentati \textbf{azioni, flusso delle azioni, partecipanti, dati e flusso dei dati per diversi casi d’uso}. \\[12pt]Consentono di modellare un processo come un’attività costituita da un \textbf{insieme di nodi connessi da archi}. \\[12pt]Non è sempre chiaro quale parte dell’organizzazione esegue le varie attività, quindi i diagrammi possono essere in partizioni che mostrano le azioni intraprese da una singola organizzazione e classe.
+\newpage
+\section{Diagrammi di stato}
+Le macchine a stati possono essere utilizzate per \textbf{modellare il comportamento dinamico di classificatori} quali classi, casi d’uso, sottoinsiemi e interi sistemi. \\[12pt]Le macchine a stati esistono nel contesto di un particolare classificatore che risponde a eventi esterni, ha un \textbf{ciclo di vita definito} che può essere modellato come una successione di stati, transizioni ed eventi, e \textbf{può avere un comportamento corrente che dipende dai comportamenti precedenti}. \\[12pt]Solitamente vengono utilizzate per modellare il comportamento dinamico di classi. \\[12pt]Ogni macchina a stati ha uno \textbf{stato iniziale} che indica il primo stato della sequenza, e uno \textbf{stato finale} che termina la sequenza a meno che non esista un ciclo perpetuo di stati.
+\\[12pt]Uno \textbf{stato è una condizione o situazione della vita di un oggetto durante la quale tale oggetto soddisfa una condizione, esegue un’attività, o aspetta un evento}. 
+\newpage
 \section{RDD}
 RDD (Responsibility-Driven Deployment) è un modello di progettazione oggetti basata su:
 \begin{itemize}
@@ -221,4 +229,47 @@ I GRASP definiscono nove principi di progettazione OO di base o blocchi di costr
 \end{itemize}
 \newpage
 \section{Design Patterns}
+\paragraph{Pattern}
+\begin{itemize}
+    \item Descrive un problema specifico che ricorre più volte
+    \item Descrive il nucleo della soluzione a quel problema in modo da poter utilizzare tale soluzione molte voltesenza mai applicarla nello stesso modo
+\end{itemize}
+\paragraph{Design Pattern}
+\begin{itemize}
+    \item Regola tripartita
+    \item Esprime una relazione tra contesto problema e soluzione
+    \item Nomina, astrae identifica aspetti chiave di una struttura di design comune
+    \item Identifica classi e istanze che partecipano, ruoli, modalità dicollaborazione e distribuzione delle responsabilità
+\end{itemize}
+
+Sono divisi in 3 categorie:
+\begin{itemize}
+    \item \textbf{Creational}: Pattern che forniscono un'astrazione del processo di instanziazione degli oggetti. Permettono di rendere un sistema indipendente da come gli oggetti sono creati/rappresentati/composti al suo interno
+    \item \textbf{Structural}: Dedicati alla composizione di classi e oggetti per formare strutture complesse. È possibile creare delle classi che ereditano da più classi per consentire di utilizzare proprietà di più superclassi
+    indipendenti. Sono particolarmente utili per fare in modo che librerie di classi sviluppate indipendentemente possano operare insieme
+    \item \textbf{Behavioral}: Sono dedicati all'assegnamento di responsabilità tra gli oggetti e alla creazione di algoritmi. L'utilizzo di questi pattern permette di dedicarsi principalmente alle connessioni tra oggetti, tralasciando la gestione dei flussi di controllo
+\end{itemize}
+\newpage
+\subsection{Alcuni Design patterns}
+\subsubsection{Adapter}
+\subparagraph{Problema} Come gestire interfacce incompatibili, o fornire un'interfaccia stabile a componenti simili ma con interfacce diverse?
+\subparagraph{Soluzione} Converti l'interfaccia di un componente in un'altra interfaccia, attraverso un oggetto \textbf{adapter} intermedio.
+\subsubsection{Factory}
+\subparagraph{Problema} Chi deve essere responsabile della creazione di oggetti quando ci sono delle considerazioni speciali, come una logica di creazione complessa, quando si desidera separare la responsabilità di creazione per una coesione migliore, e così via?
+\subparagraph{Soluzione} Crea un oggetto \textbf{pure fabrication} chiamato \textbf{factory} che ne gestisce la creazione
+\subsubsection{Singleton}
+\subparagraph{Problema} E' consentita esattamente una sola istanza di una classe, ovvero un "singleton". Gli altri oggetti hanno bisogno di un punto di accesso globale e singolo a questo oggetto.
+\subparagraph{Soluzione} Definisci un metodo statico della classe che restituisce l'oggetto singleton
+\subsubsection{Strategy}
+\subparagraph{Problema} Come progettare per gestire un insieme di algoritmi o politiche variabili ma correlati? Come progettare per consentire di modificare questi algoritmi o politiche?
+\subparagraph{Soluzione} Definisci ciascun algoritmo/politica/strategia in una classe separata, con un'interfaccia comune 
+\subsubsection{Composite}
+\subparagraph{Problema} Come trattare un gruppo o una struttura composta di oggetti polimorficamente dello stesso tipo nello stesso modo di un oggetto non composto?
+\subparagraph{Soluzione} Definisci le classi per gli oggetti composti e atomici in modo che implementino la stessa interfaccia
+\subsubsection{Façade}
+\subparagraph{Problema} E' richiesta un'interfaccia comune e unificata per un insieme disparato di implementazioni o interfacce, come per definire un sottosistema.
+\subparagraph{Soluzione} Definisci un punto di contatto singolo con il sottosistema (un oggetto \textbf{façade}) che copre il sottosistema. Questo oggetto presenta un'interfaccia singola e unificata.
+\subsubsection{Observer}
+\subparagraph{Problema} Diversi tipi di oggetti \textbf{subscriber} sono interessati ai cambiamenti di stato o agli eventi di un oggetto \textbf{publisher}
+\subparagraph{Soluzione} Definisci un'interfaccia \textbf{subscriber} o \textbf{listener}
 \end{document}
