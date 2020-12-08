@@ -1,0 +1,613 @@
+\documentclass[12pt]{article}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage[section]{placeins}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\title{Analisi e Progetto di Algoritmi}
+\author{Giuseppe Facchi}
+\date{A.A. 2020-2021}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{LIS}
+\paragraph{Problema Principale}
+Data una sequenza $X$ di lunghezza $m$ trovare la più lunga sottosequenza crescente
+\paragraph{Problema Ridotto}
+Data una sequenza $X$ di lunghezza $m$ trovare la \textbf{lunghezza} della più lunga sottosequenza crescente
+\subparagraph{Problema Vincolato}
+Data una sequenza $X$ di lunghezza $m$ trovare la \textbf{lunghezza} della più lunga sottosequenza crescente \underline{che termina con $x_m$}
+\subparagraph{Sottoproblema di dimensione $(i)$} Lunghezza LIS di $X_i$ che termina con $x_i$
+$$i \in \{0, \dots, m\}$$
+\subparagraph{Variabile}\mbox{}\\
+$C_{i}$ = Lunghezza LIS di $X_i$ che termina con $x_i$
+\subparagraph{Casi Base}
+\begin{itemize}
+    \item $C_{0} = 1$
+\end{itemize}
+\subparagraph{Passo Ricorsivo}
+\[
+    C_{i}=\begin{cases}
+        1 + max \ \{C_{h}\neq 0 \ | \ 0\leq h<i \land x_h<x_i\}$ \hspace{1cm} $\forall \ i>0 \\
+        max \ \{\emptyset\} = 0
+    \end{cases}
+\]
+\subparagraph{Soluzione PV}\mbox{}\\
+$C_{m}$ = Lunghezza LIS di $X$ che termina con $x_m$
+\paragraph{Soluzione PR}
+$$max \ \{C_{i} \ | \ 0 \leq i \leq m\}$$
+\newpage
+\begin{algorithm}
+    \caption{LIS di X}
+    \begin{algorithmic}
+        \STATE $C[0]=1$
+        \FOR{$i=1$ to $m$}
+        \STATE $max=0$
+        \FOR{$h=0$ to $i-1$}
+        \IF{$C[h] > max \land x[h] < x[i]$}
+        \STATE $max=C[h]$
+        \ENDIF
+        \ENDFOR
+        \STATE $C[i]=1+max$
+        \ENDFOR
+        \STATE $ottimo=1$
+        \FOR{$i=1$ to $m$}
+        \IF{$C[i]>ottimo$}
+        \STATE $max = C[h,k]$
+        \ENDIF
+        \ENDFOR
+        \RETURN{$ottimo$}
+    \end{algorithmic}
+\end{algorithm}
+\newpage
+
+\section{LCS}
+\paragraph{Problema Principale}
+Date due sequenze $X$ di lunghezza $m$ e $Y$ di lunghezza $n$ trovare la loro LCS
+\paragraph{Problema Ridotto}
+Date due sequenze $X$ di lunghezza $m$ e $Y$ di lunghezza $n$ trovare la \textbf{lunghezza} della loro LCS
+\subparagraph{Problema Vincolato}
+Date due sequenze $X$ e $Y$ trovare la \textbf{lunghezza} della loro LCS \underline{che termina con $x_m = y_n$}
+\subparagraph{Sottoproblema di dimensione $(i, j)$}
+Lunghezza LCS di $X_i$ e $Y_j$ che termina con $x_i = y_j$
+$$i \in \{0, \dots, m\}$$
+$$j \in \{0, \dots, n\}$$
+\subparagraph{Variabile}\mbox{}\\
+$C_{i, j}$ = Lunghezza LCS di $X_i$ e $Y_j$ che termina con $x_i = y_j$
+\subparagraph{Casi Base}
+\begin{itemize}
+    \item $C_{i,0} = 0$ \hspace{1cm} $\forall \ i$
+    \item $C_{0,j} = 0$ \hspace{1cm} $\forall \ j$
+    \item se $x_i \neq y_j$ \hspace{1cm} $C_{i,j} = 0$ \hspace{1cm} $\forall \ i, \ j > 0$
+\end{itemize}
+\subparagraph{Passo Ricorsivo}
+\begin{itemize}
+    \item se $x_i = y_j$
+\end{itemize}
+\[
+    C_{i,j}=\begin{cases}
+        1 + max \ \{C_{h,k}\neq 0 \ | \ 0\leq h<i, \ 0\leq k<j\}$ \hspace{1cm} $\forall \ i, \ j > 0 \\
+        max \ \{\emptyset\} = 0
+    \end{cases}
+\]
+\subparagraph{Soluzione PV}\mbox{}\\
+$C_{m, n}$ = Lunghezza LCS di $X$ e $Y$ che termina con $x_m = y_n$
+\paragraph{Soluzione PR}
+$$max \ \{C_{i,j} \ | \ 0 \leq i \leq m, \ 0 \leq j \leq n\}$$
+\newpage
+\begin{algorithm}
+    \caption{LCS tra X e Y}
+    \begin{algorithmic}
+        \FOR{$i=1$ to $m$}
+        \STATE $C[i, 0]=0$
+        \ENDFOR
+        \FOR{$j=1$ to $n$}
+        \STATE $C[0, j]=0$
+        \ENDFOR
+        \FOR{$i=1$ to $m$}
+        \FOR{$j=1$ to $n$}
+        \IF{$x[i] \neq y[j]$}
+        \STATE $C[i,j]=0$
+        \ENDIF
+        \IF{$x[i] == y[j]$}
+        \STATE $max=0$
+        \FOR{$h=0$ to $i-1$}
+        \FOR{$k=0$ to $j-1$}
+        \IF{$C[h,k]>max$}
+        \STATE $max = C[h,k]$
+        \ENDIF
+        \ENDFOR
+        \ENDFOR
+        \STATE $C[i,j]=1+max$
+        \ENDIF
+        \ENDFOR
+        \ENDFOR
+        \STATE $ottimo=0$
+        \FOR{$i=1$ to $m$}
+        \FOR{$j=1$ to $n$}
+        \IF{$C[i,j]>ottimo$}
+        \STATE $ottimo = C[i,j]$
+        \ENDIF
+        \ENDFOR
+        \ENDFOR
+        \RETURN{$ottimo$}
+    \end{algorithmic}
+\end{algorithm}
+\newpage
+
+\section{LICS}
+\paragraph{Problema Principale}
+Date due sequenze $X$ di lunghezza $m$ e $Y$ di lunghezza $n$ trovare la loro LICS
+\paragraph{Problema Ridotto}
+Date due sequenze $X$ di lunghezza $m$ e $Y$ di lunghezza $n$ trovare la \textbf{lunghezza} della loro LICS
+\subparagraph{Problema Vincolato}
+Date due sequenze $X$ e $Y$ trovare la \textbf{lunghezza} della loro LICS \underline{che termina con $x_m = y_n$}
+\subparagraph{Sottoproblema di dimensione $(i, j)$}
+Lunghezza LICS di $X_i$ e $Y_j$ che termina con $x_i = y_j$
+$$i \in \{0, \dots, m\}$$
+$$j \in \{0, \dots, n\}$$
+\subparagraph{Variabile}\mbox{}\\
+$C_{i, j}$ = Lunghezza LICS di $X_i$ e $Y_j$ che termina con $x_i = y_j$
+\subparagraph{Casi Base}
+\begin{itemize}
+    \item $C_{i,0} = 0$ \hspace{1cm} $\forall \ i$
+    \item $C_{0,j} = 0$ \hspace{1cm} $\forall \ j$
+    \item se $x_i \neq y_j$ \hspace{1cm} $C_{i,j} = 0$ \hspace{1cm} $\forall \ i, \ j > 0$
+\end{itemize}
+\subparagraph{Passo Ricorsivo}
+\begin{itemize}
+    \item se $x_i = y_j$
+\end{itemize}
+\[
+    C_{i,j}=\begin{cases}
+        1 + max \ \{C_{h,k}\neq 0 \ | \ 0\leq h<i, \ 0\leq k<j \land x_h < x_i\}$ \hspace{1cm} $\forall \ i, \ j > 0 \\
+        max \ \{\emptyset\} = 0
+    \end{cases}
+\]
+\subparagraph{Soluzione PV}\mbox{}\\
+$C_{m, n}$ = Lunghezza LICS di $X$ e $Y$ che termina con $x_m = y_n$
+\paragraph{Soluzione PR}
+$$max \ \{C_{i,j} \ | \ 0 \leq i \leq m, \ 0 \leq j \leq n\}$$
+\newpage
+\begin{algorithm}
+    \caption{LICS tra X e Y}
+    \begin{algorithmic}
+        \FOR{$i=1$ to $m$}
+        \STATE $C[i, 0]=0$
+        \ENDFOR
+        \FOR{$j=1$ to $n$}
+        \STATE $C[0, j]=0$
+        \ENDFOR
+        \FOR{$i=1$ to $m$}
+        \FOR{$j=1$ to $n$}
+        \IF{$x[i] \neq y[j]$}
+        \STATE $C[i,j]=0$
+        \ENDIF
+        \IF{$x[i] == y[j]$}
+        \STATE $max=0$
+        \FOR{$h=0$ to $i-1$}
+        \FOR{$k=0$ to $j-1$}
+        \IF{$C[h,k]>max \land x_h < x_i$}
+        \STATE $max = C[h,k]$
+        \ENDIF
+        \ENDFOR
+        \ENDFOR
+        \STATE $C[i,j]=1+max$
+        \ENDIF
+        \ENDFOR
+        \ENDFOR
+        \STATE $ottimo=0$
+        \FOR{$i=1$ to $m$}
+        \FOR{$j=1$ to $n$}
+        \IF{$C[i,j]>ottimo$}
+        \STATE $ottimo = C[i,j]$
+        \ENDIF
+        \ENDFOR
+        \ENDFOR
+        \RETURN{$ottimo$}
+    \end{algorithmic}
+\end{algorithm}
+\newpage
+
+\section{LZS}
+\paragraph{Problema Principale}
+Data una sequenza $X$ di lunghezza $m$ trovare la più lunga sottosequenza zig-zag
+\paragraph{Problema Ridotto}
+Data una sequenza $X$ di lunghezza $m$ trovare la \textbf{lunghezza} della più lunga sottosequenza zig-zag
+\subparagraph{Problemi Vincolati}
+\begin{itemize}
+    \item \underline{\textbf{0}}: Data una sequenza $X$ di lunghezza $m$ trovare la \textbf{lunghezza} della sua più lunga sottosequenza zig-zag \underline{che termina con $x_m$} e che ha lunghezza \underline{pari}
+    \item \underline{\textbf{1}}: Data una sequenza $X$ di lunghezza $m$ trovare la \textbf{lunghezza} della sua più lunga sottosequenza zig-zag \underline{che termina con $x_m$} e che ha lunghezza \underline{dispari}
+\end{itemize}
+\subparagraph{Sottoproblemi}
+\begin{itemize}
+    \item \textbf{\underline{0} Sottoproblema di dimensione $(i)$}: Trovare la \textbf{lunghezza} della sua più lunga sottosequenza zig-zag \underline{che termina con $x_i$} e che ha lunghezza \underline{pari}
+\end{itemize}
+$$i \in \{0, \dots, m\}$$
+\begin{itemize}
+    \item \textbf{\underline{1} Sottoproblema di dimensione $(i)$}: Trovare la \textbf{lunghezza} della sua più lunga sottosequenza zig-zag \underline{che termina con $x_i$} e che ha lunghezza \underline{dispari}
+\end{itemize}
+$$i \in \{0, \dots, m\}$$
+\subparagraph{Variabili}
+\begin{itemize}
+    \item $C_{i,\underline{0}}$ = Lunghezza della più lunga sottosequenza zig-zag \underline{che termina con $x_i$} e ha lunghezza \underline{pari}
+    \item $C_{i,\underline{1}}$ = Lunghezza della più lunga sottosequenza zig-zag \underline{che termina con $x_i$} e ha lunghezza \underline{dispari}
+\end{itemize}
+\newpage
+\subparagraph{Casi Base}
+\begin{itemize}
+    \item $C_{1,\underline{0}} = 0$
+    \item $C_{1,\underline{1}} = 1$
+\end{itemize}
+\subparagraph{Passo Ricorsivo}
+\[
+    C_{i, \underline{0}}=\begin{cases}
+        1 + max \ \{C_{h, \underline{1}}\neq 0 \ | \ 0\leq h<i \land x_h<x_i\}$ \hspace{1cm} $\forall \ i>1 \\
+        max \ \{\emptyset\} = 0
+    \end{cases}
+\]
+\[
+    C_{i, \underline{1}}=\begin{cases}
+        1 + max \ \{C_{h, \underline{0}}\neq 0 \ | \ 0\leq h<i \land x_h>x_i\}$ \hspace{1cm} $\forall \ i>1 \\
+        max \ \{\emptyset\} = 0
+    \end{cases}
+\]
+\subparagraph{Soluzioni PV}
+\begin{itemize}
+    \item $C_{m, \underline{0}}$ = Lunghezza LZS di $X$ che termina con $x_m$ e ha lunghezza \underline{pari}
+    \item $C_{m, \underline{1}}$ = Lunghezza LZS di $X$ che termina con $x_m$ e ha lunghezza \underline{dispari}
+\end{itemize}
+\paragraph{Soluzione PR}
+$$max \ \{C_{i,\underline{0}} \ C_{i,\underline{1}} \ | \ 1 \leq i \leq m\}$$
+\newpage
+\begin{algorithm}
+    \caption{LZS di X}
+    \begin{algorithmic}
+        \STATE $C_{0}[1]=0$
+        \STATE $C_{1}[1]=1$
+        \FOR{$i=2$ to $m$}
+        \STATE $max_0=max_1=0$
+        \FOR{$h=1$ to $i-1$}
+        \IF{$C_1[h] > max_0 \land x[h] < x[i]$}
+        \STATE $max_0=C_1[h]$
+        \ENDIF
+        \IF{$C_0[h] > max_1 \land x[h] > x[i]$}
+        \STATE $max_1=C_0[h]$
+        \ENDIF
+        \ENDFOR
+        \IF{$max_0 \neq 0$}
+        \STATE $C_0[i]=1+max_0$
+        \ENDIF
+        \STATE $C_1[i]=1+max_1$
+        \ENDFOR
+        \STATE $ottimo=1$
+        \FOR{$i=1$ to $m$}
+        \IF{$max(C_0[i], \ C_1[i])>ottimo$}
+        \STATE $ottimo = max(C_0[i], \ C_1[i])$
+        \ENDIF
+        \ENDFOR
+        \RETURN{$ottimo$}
+    \end{algorithmic}
+\end{algorithm}
+\newpage
+
+\section{LCS che non ha due caratteri consecutivi}
+\paragraph{Problema Principale}
+Date due sequenze $X$ di lunghezza $m$ e $Y$ di lunghezza $n$ trovare la loro LCS \underline{che non ha due caratteri consecutivi}
+\paragraph{Problema Ridotto}
+Date due sequenze $X$ di lunghezza $m$ e $Y$ di lunghezza $n$ trovare la \textbf{lunghezza} della loro LCS \underline{che non ha due caratteri consecutivi}
+\subparagraph{Problema Vincolato}
+Date due sequenze $X$ di lunghezza $m$ e $Y$ di lunghezza $n$ trovare la lunghezza della loro LCS \underline{che non ha due caratteri} \underline{consecutivi} e che termina con $x_m \ (=y_n)$
+\subparagraph{Sottoproblema di dimensione $(i, j)$}
+Lunghezza LCS di $X_i$ e $Y_j$ \underline{che} \underline{non ha due caratteri consecutivi} che termina con $x_i = y_j$
+$$i \in \{0, \dots, m\}$$
+$$j \in \{0, \dots, n\}$$
+\subparagraph{Variabile}\mbox{}\\
+$C_{i,j}$ = Lunghezza della LCS tra $X_i$ e $Y_j$ che \underline{non ha due caratteri consecutivi} e che termina con $x_i = y_j$
+\subparagraph{Casi base}
+\begin{itemize}
+    \item $C_{i,0}=0 \hspace{1cm} \forall \ i$
+    \item $C_{0,j}=0 \hspace{1cm} \forall \ j$
+    \item se $x_i \neq y_j \hspace{1cm} C_{i,j}=0 \hspace{1cm} \forall \ i, \ j > 0$
+\end{itemize}
+\subparagraph{Caso Ricorsivo}
+\[
+    C_{i, j}=\begin{cases}
+        1 + max \ \{C_{h, k}\neq 0 \ | \ 0 \leq h<i, \ 0 \leq k<j \land x_h \neq x_i\}$ \hspace{0.5cm} $\forall \ i, \ j>1 \\
+        max \ \{\emptyset\} = 0
+    \end{cases}
+\]
+\subparagraph{Soluzione PV}\mbox{}\\
+$C[m,n]$ = Lunghezza della LCS tra $X$ di lunghezza $m$ e $Y$ di lunghezza $n$ \underline{che non ha due caratteri consecutivi} e che termina con $x_m \ (=y_n)$
+\subparagraph{Soluzione PR}
+$$max \ \{C_{i,j} \ | \ 0\leq i \leq m, \ 0\leq j \leq n\}$$
+
+\begin{algorithm}
+    \caption{LCS tra X e Y che non ha due caratteri consecutivi}
+    \begin{algorithmic}
+        \FOR{$i=1$ to $m$}
+        \STATE $C[i, 0]=0$
+        \ENDFOR
+        \FOR{$j=1$ to $n$}
+        \STATE $C[0, j]=0$
+        \ENDFOR
+        \FOR{$i=1$ to $m$}
+        \FOR{$j=1$ to $n$}
+        \IF{$x[i] \neq y[j]$}
+        \STATE $C[i,j]=0$
+        \ENDIF
+        \IF{$x[i] == y[j]$}
+        \STATE $max=0$
+        \FOR{$h=0$ to $i-1$}
+        \FOR{$k=0$ to $j-1$}
+        \IF{$C[h,k]>max \land x[h] \neq x[i]$}
+        \STATE $max = C[h,k]$
+        \ENDIF
+        \ENDFOR
+        \ENDFOR
+        \STATE $C[i,j]=1+max$
+        \ENDIF
+        \ENDFOR
+        \ENDFOR
+        \STATE $ottimo=0$
+        \FOR{$i=1$ to $m$}
+        \FOR{$j=1$ to $n$}
+        \IF{$C[i,j]>ottimo$}
+        \STATE $ottimo = C[i,j]$
+        \ENDIF
+        \ENDFOR
+        \ENDFOR
+        \RETURN{$ottimo$}
+    \end{algorithmic}
+\end{algorithm}
+\newpage
+
+\section{LCS che alterna valori $\leq 5$ e valori $\geq 10$}
+\paragraph{Problema Principale}
+Date due sequenze $X$ di lunghezza $m$ e $Y$ di lunghezza $n$ trovare la loro LCS \underline{che alterna valori $\leq 5$ e valori $\geq 10$}
+\paragraph{Problema Ridotto}
+Date due sequenze $X$ di lunghezza $m$ e $Y$ di lunghezza $n$ trovare la \textbf{lunghezza} della loro LCS \underline{che alterna valori $\leq 5$ e valori $\geq 10$}
+\subparagraph{Problema Vincolato}
+Date due sequenze $X$ di lunghezza $m$ e $Y$ di lunghezza $n$ trovare la lunghezza della loro LCS \underline{che alterna valori $\leq 5$ e valori } \underline{$\geq 10$} e che termina con $x_m \ (=y_n)$
+\subparagraph{Sottoproblema di dimensione $(i, j)$}
+Lunghezza LCS di $X_i$ e $Y_j$ \underline{che} \underline{alterna valori $\leq 5$ e valori $\geq 10$} che termina con $x_i = y_j$
+$$i \in \{0, \dots, m\}$$
+$$j \in \{0, \dots, n\}$$
+\subparagraph{Variabile}\mbox{}\\
+$C_{i,j}$ = Lunghezza della LCS tra $X_i$ e $Y_j$ che \underline{alterna valori $\leq 5$ e valori $\geq 10$} e che termina con $x_i = y_j$
+\subparagraph{Casi base}
+\begin{itemize}
+    \item $C_{i,0}=0 \hspace{1cm} \forall \ i$
+    \item $C_{0,j}=0 \hspace{1cm} \forall \ j$
+    \item se $x_i \neq y_j \hspace{1cm} C_{i,j}=0 \hspace{1cm} \forall \ i, \ j > 0$
+    \item se $x_i == y_j \land 5<x_i<10 \hspace{1cm} C_{i,j}=0 \hspace{1cm} \forall \ i, \ j > 0$
+\end{itemize}
+\subparagraph{Casi Ricorsivi}
+\begin{itemize}
+    \item se $x_i == y_j \land x_i\leq 5 $
+\end{itemize}
+\[
+    C_{i, j}=\begin{cases}
+        1 + max \ \{C_{h, k}\neq 0 \ | \ 0 \leq h<i, \ 0 \leq k<j \land x_h \geq 10\}$ \hspace{0.5cm} $\forall \ i, \ j>1 \\
+        max \ \{\emptyset\} = 0
+    \end{cases}
+\]
+\begin{quote}
+    \textbf{Sottostruttura Ottima}: La lunghezza dell'LCS in cui si alternano valori $\leq 5$ e valori $\geq 10$ e \underline{che termina in $x_i = y_j \leq 5$} sarà data dall'aggiunta di \textbf{1} alla lunghezza della \textbf{massima} LCS in cui si alternano valori $\leq 5$ e valori $\geq 10$ che finisce con due elementi $x_h=y_k (h<i, \ k<j)$ ed è tale per cui $x_h \geq 10$
+\end{quote}
+\begin{itemize}
+    \item se $x_i == y_j \land x_i\geq 10 $
+\end{itemize}
+\[
+    C_{i, j}=\begin{cases}
+        1 + max \ \{C_{h, k}\neq 0 \ | \ 0 \leq h<i, \ 0 \leq k<j \land x_h \leq 5\}$ \hspace{0.5cm} $\forall \ i, \ j>1 \\
+        max \ \{\emptyset\} = 0
+    \end{cases}
+\]
+\begin{quote}
+    \textbf{Sottostruttura Ottima}: La lunghezza dell'LCS in cui si alternano valori $\leq 5$ e valori $\geq 10$ e \underline{che termina in $x_i = y_j \geq 10$} sarà data dall'aggiunta di \textbf{1} alla lunghezza della \textbf{massima} LCS in cui si alternano valori $\leq 5$ e valori $\geq 10$ che finisce con due elementi $x_h=y_k (h<i, \ k<j)$ ed è tale per cui $x_h \leq 5$
+\end{quote}
+\subparagraph{Soluzione PV}\mbox{}\\
+$C_{m,n}$ = Lunghezza della LCS tra $X$ di lunghezza $m$ e $Y$ di lunghezza $n$ \underline{che alterna valori $\leq 5$ e valori $\geq 10$} e che termina con $x_m =y_n)$
+\subparagraph{Soluzione PR}
+$$max \ \{C_{i,j} \ | \ 0\leq i \leq m, \ 0\leq j \leq n\}$$
+
+\begin{algorithm}
+    \caption{LCS tra X e Y che alterna valori $\leq 5$ e valori $\geq 10$}
+    \begin{algorithmic}[1]
+        \FOR{$i=1$ to $m$}
+        \STATE $C[i, 0]=0$
+        \ENDFOR
+        \FOR{$j=1$ to $n$}
+        \STATE $C[0, j]=0$
+        \ENDFOR
+        \FOR{$i=1$ to $m$}
+        \FOR{$j=1$ to $n$}
+        \IF{$x[i] \neq y[j]$}
+        \STATE $C[i,j]=0$
+        \ENDIF
+        \IF{$x[i] == y[j] \land x[i] \leq 5$}
+        \STATE $max=0$
+        \FOR{$h=0$ to $i-1$}
+        \FOR{$k=0$ to $j-1$}
+        \IF{$C[h,k]>max \land x[h] \geq 10$}
+        \STATE $max = C[h,k]$
+        \ENDIF
+        \ENDFOR
+        \ENDFOR
+        \STATE $C[i,j]=1+max$
+        \ENDIF
+        \IF{$x[i] == y[j] \land x[i] \geq 10$}
+        \STATE $max=0$
+        \FOR{$h=0$ to $i-1$}
+        \FOR{$k=0$ to $j-1$}
+        \IF{$C[h,k]>max \land x[h] \leq 5$}
+        \STATE $max = C[h,k]$
+        \ENDIF
+        \ENDFOR
+        \ENDFOR
+        \STATE $C[i,j]=1+max$
+        \ENDIF
+        \ENDFOR
+        \ENDFOR
+    \end{algorithmic}
+\end{algorithm}
+\begin{algorithm}
+    \begin{algorithmic}
+        \STATE $ottimo=0$
+        \FOR{$i=1$ to $m$}
+        \FOR{$j=1$ to $n$}
+        \IF{$C[i,j]>ottimo$}
+        \STATE $ottimo = C[i,j]$
+        \ENDIF
+        \ENDFOR
+        \ENDFOR
+        \RETURN{$ottimo$}
+    \end{algorithmic}
+\end{algorithm}
+\FloatBarrier
+\mbox{}\\
+\newpage
+\section{LCS tra X e Y che alterna valori $\leq 5$ in posizione dispari e valori $\geq 10$ in posizione pari}
+\paragraph{Problema Principale}
+Date due sequenze $X$ di lunghezza $m$ e $Y$ di lunghezza $n$ trovare la loro LCS \underline{che alterna valori $\leq 5$ in posizione dispari e valori} \underline{$\geq 10$ in posizione pari}
+\paragraph{Problema Ridotto}
+Date due sequenze $X$ di lunghezza $m$ e $Y$ di lunghezza $n$ trovare la \textbf{lunghezza} della loro LCS \underline{che alterna valori $\leq 5$ in posizione} \underline{dispari e valori $\geq 10$ in posizione pari}
+\subparagraph{Problemi Vincolati}
+\begin{itemize}
+    \item \textbf{\underline{0}}: Date due sequenze $X$ di lunghezza $m$ e $Y$ di lunghezza $n$ trovare la \textbf{lunghezza} della loro LCS di \textbf{lunghezza pari} \underline{che alterna valori $\leq 5$ in} \underline{posizione dispari e valori $\geq 10$ in posizione pari} e che termina con $x_m = y_n$
+    \item \textbf{\underline{1}}: Date due sequenze $X$ di lunghezza $m$ e $Y$ di lunghezza $n$ trovare la \textbf{lunghezza} della loro LCS di \textbf{lunghezza pari} \underline{che alterna valori $\leq 5$ in} \underline{posizione dispari e valori $\geq 10$ in posizione pari} e che termina con $x_m = y_n$
+\end{itemize}
+\subparagraph{Sottoproblemi di dimensione $(i, j)$}
+\begin{itemize}
+    \item \textbf{\underline{0} Sottoproblema di dimensione} ($i, j$): Trovare la \textbf{lunghezza} della LCS di \textbf{lunghezza pari} di $X_i$ e $Y_i$ che alterna valori $\leq 5$ in posizione dispari e valori $\geq 10$ in posizione pari e che termina con $x_i = y_j$ (pari $\geq 10$)
+\end{itemize}
+$$i\in \ {0,...,m}$$
+$$j\in \ {0,...,n}$$
+\begin{itemize}
+    \item \textbf{\underline{0} Sottoproblema di dimensione} ($i, j$): Trovare la \textbf{lunghezza} della LCS di \textbf{lunghezza dispari} di $X_i$ e $Y_i$ che alterna valori $\leq 5$ in posizione dispari e valori $\geq 10$ in posizione pari e che termina con $x_i = y_j$
+\end{itemize}
+$$i\in \ {0,...,m}$$
+$$j\in \ {0,...,n}$$
+\subparagraph{Variabili}
+\begin{itemize}
+    \item $C_{i, j, \underline{0}}$ = \textbf{lunghezza} della LCS di \textbf{lunghezza pari} di $X_i$ e $Y_i$ che alterna valori $\leq 5$ in posizione dispari e valori $\geq 10$ in posizione pari e che termina con $x_i = y_j$
+    \item $C_{i, j, \underline{1}}$ = \textbf{lunghezza} della LCS di \textbf{lunghezza dispari} di $X_i$ e $Y_i$ che alterna valori $\leq 5$ in posizione dispari e valori $\geq 10$ in posizione pari e che termina con $x_i = y_j$
+\end{itemize}
+\subparagraph{Casi base $PV_0$}
+\begin{itemize}
+    \item $C_{i,0,\underline{0}}=0 \hspace{1cm} \forall \ i$
+    \item $C_{0,j,\underline{0}}=0 \hspace{1cm} \forall \ j$
+    \item se $x_i \neq y_j \hspace{1cm} C_{i,j, \underline{0}}=0 \hspace{1cm} \forall \ i, \ j > 0$
+    \item se $x_i == y_j \land 5<x_i<10 \hspace{1cm} C_{i,j,\underline{0}}=0 \hspace{1cm} \forall \ i, \ j > 0$
+    \item se $x_i == y_j \land x_i \leq 5 \hspace{1cm} C_{i,j,\underline{0}}=0 \hspace{1cm} \forall \ i, \ j > 0$
+\end{itemize}
+\subparagraph{Passo Ricorsivo $PV_0$}
+\begin{itemize}
+    \item se $x_i=y_j \land x_i(=y_j)\geq 10$
+\end{itemize}
+\[
+    C_{i, j, \underline{0}}=\begin{cases}
+        1 + max \ \{C_{h, k, \underline{1}}\neq 0 \ | \ 0 \leq h<i, \ 0 \leq k<j\}$ \hspace{0.5cm} $\forall \ i, \ j>1 \\
+        max \ \{\emptyset\} = 0
+    \end{cases}
+\]
+\subparagraph{Casi base $PV_1$}
+\begin{itemize}
+    \item $C_{i,0,\underline{1}}=0 \hspace{1cm} \forall \ i$
+    \item $C_{0,j,\underline{1}}=0 \hspace{1cm} \forall \ j$
+    \item se $x_i \neq y_j \hspace{1cm} C_{i,j, \underline{1}}=0 \hspace{1cm} \forall \ i, \ j > 0$
+    \item se $x_i == y_j \land 5<x_i<10 \hspace{1cm} C_{i,j,\underline{1}}=0 \hspace{1cm} \forall \ i, \ j > 0$
+    \item se $x_i == y_j \land x_i \geq 10 \hspace{1cm} C_{i,j,\underline{1}}=0 \hspace{1cm} \forall \ i, \ j > 0$
+\end{itemize}
+\subparagraph{Passo Ricorsivo $PV_1$}
+\begin{itemize}
+    \item se $x_i=y_j \land x_i(=y_j)\leq 5$
+\end{itemize}
+\[
+    C_{i, j, \underline{1}}=\begin{cases}
+        1 + max \ \{C_{h, k, \underline{0}}\neq 0 \ | \ 0 \leq h<i, \ 0 \leq k<j\}$ \hspace{0.5cm} $\forall \ i, \ j>1 \\
+        max \ \{\emptyset\} = 0
+    \end{cases}
+\]
+\subparagraph{Soluzioni PV}
+\begin{itemize}
+    \item $C_{m, n, \underline{0}}$ = Lunghezza LCS di $X_i$ di lunghezza pari che alterna valori $\leq 5$ in posizione dispari e valori $\geq 10$ in posizione pari e che termina con $x_m = y_n$
+    \item $C_{m, n, \underline{1}}$ = Lunghezza LCS di $X_i$ di lunghezza dispari che alterna valori $\leq 5$ in posizione dispari e valori $\geq 10$ in posizione pari e che termina con $x_m = y_n$
+\end{itemize}
+\paragraph{Soluzione PR}
+$$max \ \{C_{i, j, \underline{0}} \ C_{i, j, \underline{1}} \ | \ 0 \leq i \leq m, \ 0 \leq j \leq n\}$$
+\begin{algorithm}
+    \caption{LCS tra X e Y che alterna valori $\leq 5$ in posizione dispari e valori $\geq 10$ in posizione pari}
+    \begin{algorithmic}
+        \FOR{$i=1$ to $m$}
+        \STATE $C[i, 0, 0]=0$
+        \STATE $C[i, 0, 1]=0$
+        \ENDFOR
+        \FOR{$j=1$ to $n$}
+        \STATE $C[0, j, 0]=0$
+        \STATE $C[0, j, 1]=0$
+        \ENDFOR
+        \FOR{$i=1$ to $m$}
+        \FOR{$j=1$ to $n$}
+        \IF{$x[i] \neq y[j]$}
+        \STATE $C[i,j,0]=0$
+        \STATE $C[i,j,1]=0$
+        \ENDIF
+        \IF{$x[i] == y[j] \land x[i] > 5 \land x[i] < 10$}
+        \STATE $C[i,j,0]=0$
+        \STATE $C[i,j,1]=0$
+        \ENDIF
+        \IF{$x[i] == y[j] \land x[i] \leq 5$}
+        \STATE $max=0$
+        \FOR{$h=0$ to $i-1$}
+        \FOR{$k=0$ to $j-1$}
+        \IF{$C[h,k,0] > max$}
+        \STATE $max=C[h,k,0]$
+        \ENDIF
+        \ENDFOR
+        \ENDFOR
+        \STATE $C[i,j,1] = 1+max$
+        \ENDIF
+
+        \IF{$x[i] == y[j] \land x[i] \geq 10$}
+        \STATE $max=0$
+        \STATE $C[i,j,0] = 0$
+        \FOR{$h=0$ to $i-1$}
+        \FOR{$k=0$ to $j-1$}
+        \IF{$C[h,k,1] > max$}
+        \STATE $max=C[h,k,1]$
+        \ENDIF
+        \ENDFOR
+        \ENDFOR
+        \IF{$max \neq 0$}
+        \STATE $C[i,j,0] = 1+max$
+        \ENDIF
+        \ENDIF
+        \ENDFOR
+        \ENDFOR
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \begin{algorithmic}
+        \STATE $ottimo=1$
+        \FOR{$i=0$ to $m$}
+        \FOR{$j=0$ to $n$}
+        \IF{$max(C[i,j,0], \ C[i,j,1])>ottimo$}
+        \STATE $ottimo = max(C[i,j,0], \ C[i,j,1])$
+        \ENDIF
+        \ENDFOR
+        \ENDFOR
+        \RETURN{$ottimo$}
+    \end{algorithmic}
+\end{algorithm}
+\FloatBarrier
+\mbox{}\\
+\end{document}
