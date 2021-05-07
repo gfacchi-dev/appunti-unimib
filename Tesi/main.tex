@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt,openright,oneside]{book}
+\documentclass[a4paper, 12pt, openright, oneside]{book}
 \usepackage[a4paper,margin=2in]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -27,6 +27,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \setlength{\headsep}{0.35in}
+\setlength{\headheight}{15pt}
 \let\MakeUppercase\relax
 \renewcommand\sectionmark[1]{}
 
@@ -45,60 +46,7 @@
 
 \begin{document}
 \frontmatter
-\begin{titlepage}
-	\noindent
-	\begin{minipage}[t]{0.18\textwidth}
-		\vspace{-4.5mm}{\includegraphics[scale=0.20]{images/logo_unimib.png}}
-	\end{minipage}
-	\begin{minipage}[t]{0.82\textwidth}
-		{
-			\setstretch{1.42}{\textsc{Università degli Studi di Milano - Bicocca} } \\
-			\textbf{Scuola di Scienze} \\
-			\textbf{Dipartimento di Informatica, Sistemistica e Comunicazione} \\
-			\textbf{Corso di Laurea in Informatica} \\
-			\par
-		}
-	\end{minipage}
-	
-	\vspace{40mm}
-	
-	\begin{center}
-		{\LARGE{
-				\setstretch{1.2}
-				\textbf{Generazione di reti Bayesiane \\ a partire da ontologie}
-				\par
-		}}
-	\end{center}
-	
-	\vspace{50mm}
-	
-	\noindent
-	{\large \textbf{Relatore:} Prof. Denaro Giovanni } \\
-	
-	\noindent
-	{\large \textbf{Tutor Aziendale:} Fumagalli Aliosha}
-	
-	\vspace{15mm}
-	
-	\begin{flushright}
-		{\large \textbf{Relazione di tesi:}} \\
-		\large{Giuseppe Facchi} \\
-		\large{Matricola 845662} 
-	\end{flushright}
-	
-	\vspace{20mm}
-	\begin{center}
-		{\large{\bf Anno Accademico 2020-2021}}
-	\end{center}
-	
-	\restoregeometry
-	
-\end{titlepage}
-
-%\input frontespizio
-
-%\maketitle
-
+\input sezioni/0-frontespizio
 
 \input sezioni/1-ringraziamenti
 
@@ -109,8 +57,12 @@
 \input sezioni/3-analisi-dei-requisiti
 \input sezioni/4-componente-tecnologica
 \input sezioni/5-funzionalita
+\input sezioni/6-sicurezza
 
 \backmatter
+
+\input sezioni/7-conclusioni
+
 
 \bibliographystyle{unsrtnat}
 \bibliography{bibliografia}
