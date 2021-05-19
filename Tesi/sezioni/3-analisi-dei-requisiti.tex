@@ -39,9 +39,55 @@ I casi d'uso possono essere descritti, in genere, in diversi modi. Riguardo Garz
 \paragraph{Accetta Preventivo} Il cliente, dopo la sua autenticazione e la ricezione di un preventivo da parte del negozio, accetta la proposta. Il sistema aggiorna lo stato dell'ordine e notifica il negozio dell'avvenuto cambiamento.
 \paragraph{Invia Messaggio} Il cliente, dopo la sua autenticazione, avvia una conversazione di chat con il negozio (o viceversa). Dopo la validazione del messaggio, il sistema provvede alla sua registrazione. Il negozio (il cliente) sarà notificato della sua ricezione e sarà abilitato ad inviare a sua volta un messaggio.
 \paragraph{Abilita Negozio} Il comune, dopo la sua autenticazione, abilita o disabilita un negozio, rendendone impossibile l'accesso e la visualizzazione sulla piattaforma.
+\paragraph{Gestisci Comunicazione} Il comune, dopo la sua autenticazione, aggiunge una comunicazione, la quale sarà visibile ai negozianti e agli utenti del marketplace.
 \paragraph{Gestisci Comune} L'amministratore di sistema, dopo la sua autenticazione, provvede a gestire i dati relativi ad un comune. Dopo la compilazione manuale dei dati del comune, il sistema li convalida e registra/aggiorna l'istanza. 
 \paragraph{Gestisci Negozio} L'amministratore di sistema, dopo la sua autenticazione, provvede a gestire i dati relativi ad un negozio. Dopo la compilazione manuale dei dati del negozio, il sistema li convalida e registra/aggiorna l'istanza. 
-\paragraph{Gestisci Cliente} L'amministratore di sistema, dopo la sua autenticazione, provvede a gestire i dati relativi ad un cliente. Dopo la compilazione manuale dei dati del cliente, il sistema li convalida e registra/aggiorna l'istanza. 
+\paragraph{Gestisci Cliente} L'amministratore di sistema, dopo la sua autenticazione, provvede a gestire i dati relativi ad un cliente. Dopo la compilazione manuale dei dati del cliente, il sistema li convalida e registra/aggiorna l'istanza.
+
+\begin{table}[!htb]
+    \centering
+    \begin{tabular}{|c|c|} 
+    \hline
+    \textbf{Caso d'uso}             & \textbf{Attori coinvolti}                         \\ 
+    \hline
+    \textit{Registra Negozio}       & Negozio, Amministratore, Servizio autenticazione  \\ 
+    \hline
+    \textit{Registra Cliente}       & Cliente, Servizio autenticazione                  \\ 
+    \hline
+    \textit{Gestisci Vetrina}       & Negozio, Amministratore                           \\ 
+    \hline
+    \textit{Gestisci Promozione}    & Negozio, Amministratore                           \\ 
+    \hline
+    \textit{Gestisci Appuntamento}  & Negozio, Cliente, Amministratore                  \\ 
+    \hline
+    \textit{Crea~Ordine}            & Cliente                                           \\ 
+    \hline
+    \textit{Accetta Ordine}         & Negozio, Amministratore                           \\ 
+    \hline
+    \textit{Paga Ordine}            & Cliente, Servizio autorizzazione pagamenti        \\ 
+    \hline
+    \textit{Evadi Ordine}           & Negozio, Amministratore                           \\ 
+    \hline
+    \textit{Invia Preventivo}       & Negozio                                           \\ 
+    \hline
+    \textit{Accetta Preventivo}     & Cliente                                           \\ 
+    \hline
+    \textit{Invia Messaggio}        & Negozio, Cliente                                  \\ 
+    \hline
+    \textit{Abilita Negozio}        & Comune, Amministratore                            \\ 
+    \hline
+    \textit{Gestisci Comune}        & Comune,~Amministratore                            \\ 
+    \hline
+    \textit{Gestisci Negozio}       & Negozio,~Amministratore                           \\ 
+    \hline
+    \textit{Gestisci Cliente}       & Cliente, Amministratore                           \\ 
+    \hline
+    \textit{Gestisci Comunicazione} & Comune, Amministratore                            \\
+    \hline
+    \end{tabular}
+    \caption{Riepilogo Casi d'uso e Attori coinvolti}
+\end{table}
+
 \section{Modellazione astratta e struttura del progetto}
 Garzone ha lo scopo di rendere possibile la transizione vera e propria di un negozio fisico al digitale prevedendo per i negozianti l'utilizzo di una piattaforma gestionale efficiente e per i cittadini un efficacie canale di comunicazione. Per ogni attore è prevista la realizzazione di una propria piattaforma con un dominio web dedicato. \\Tutte le piattaforme comunicano per la gestione dati con un sistema backend unico, il quale a sua volta si interfaccia con sistemi per l'autorizzazione dei pagamenti, per l'autenticazione degli utenti e una base di dati.
 \subsection{Pannello Negozio}
@@ -57,6 +103,7 @@ Il pannello del negoziante prevede l'implementazione delle seguenti funzionalit�
     \item \textbf{Gestione appuntamenti}: da questa sezione è possibile inserire, modificare ed eliminare appuntamenti
     \item \textbf{Gestione ordini}: da questa sezione è possibile gestire gli ordini ricevuti dai clienti, i quali seguiranno un flusso di evasione prestabilito
     \item \textbf{Invio messaggi}: tramite questa sezione il negoziante potrà comunicare solo con clienti hanno precedentemente inviato un messaggio al negozio
+    \item \textbf{Visualizzazione comunicazioni}: contiene le comunicazioni create dal comune in cui il negozio è registrato
 \end{itemize}
 \subsection{Pannello Comune} Il pannello del comune prevede l'implementazione delle seguenti funzionalità:
 \begin{itemize}
@@ -78,9 +125,20 @@ Il pannello del negoziante prevede l'implementazione delle seguenti funzionalit�
 \subsection{Pannello Cliente} Il pannello destinato ai clienti, invece prevede lo sviluppo delle seguenti funzionalità:
 \begin{itemize}
     \item \textbf{Registrazione}: consiste in una sezione dove viene richiesto al cliente di registrarsi, inserendo manualmente i suoi dati personali
-    \item \textbf{Accesso}: prevede una sezione dove il cliente può accedere alla sua piattaforma
+    \item \textbf{Accesso}: prevede una sezione dove il cliente può accedere alla piattaforma di Garzone
     \item \textbf{Visualizzazione marketplace}: prevede la possibilità per il cliente di visualizzare tutti i negozi, registrati e abilitati dalla piattaforma, di un comune da lui selezionato
     \item \textbf{Visualizzazione promozioni}: revede la possibilità per il cliente di visualizzare tutte le promozioni inserite dai negozi  e attualmente attive (non scadute) per il marketplace selezionato
-    \item \textbf{Visualizzazione negozio}: prevede la possibilità per il cliente di visualizzare i dettagli di registrazione, il catalogo prodotti/servizi, le promozioni e gli slot di appuntamento già occupati di un negozio specifico selezionato dal marketplace
-    
+    \item \textbf{Visualizzazione negozio}: prevede la possibilità per il cliente di visualizzare i dettagli di registrazione, il catalogo prodotti/servizi con la possibilità di aggiunta al carrello per un successivo ordine, le promozioni e gli slot di appuntamento già occupati di un negozio specifico selezionato dal marketplace
+    \item \textbf{Invio messaggi}: tramite questa sezione il cliente, previa registrazione e accesso, ha la possibilità di inviare messaggi ad un negozio selezionato
+    \item \textbf{Richiesta preventivo}: tramite questa funzionalità un cliente può richiedere un preventivo al negoziante indicando le sue necessità
+    \item \textbf{Gestione ordini}: da questa sezione è possibile gestire gli ordini inviati ai negozi, i quali seguiranno un flusso di evasione prestabilito
+    \item \textbf{Gestione appuntamenti}: da questa sezione è possibile gestire, modificando o annullando, gli appuntamenti presi con i negozi dei vari marketplaces
+    \item \textbf{Visualizzazione comunicazioni}: contiene le comunicazioni create dal comune (marketplace) selezionato
 \end{itemize}
+
+I domini della soluzione costituiscono una struttura gerarchica ad albero, in cui il pannello cliente è consultabile tramite dominio principale, mentre gli altri pannelli tramite sottodomini. In particolare seguiranno questa struttura:
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=1\textwidth]{domini.png}
+    \caption{Struttura domini e sottodomini Garzone}
+\end{figure}
