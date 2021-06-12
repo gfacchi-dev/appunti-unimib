@@ -53,13 +53,44 @@ Per l'avvio e la sua messa in produzione, il progetto prevede l'utilizzo di scri
     \caption{Sommario script di avvio dei progetti di test e live e relative interfacce}
 \end{figure}
 \section{Javascript e NodeJS}
-Il progetto è interamente realizzato tramite l'utilizzo del linguaggio Javascript. Fu introdotto nel 1995 come strumento per inserire programmi nelle pagine web del browser Netscape Navigator. Successivamente è stato via via adottato da tutti gli altri browser grafici, rendendo realizzabili moderne applicazioni Web con le quali si può interagire direttamente, senza dover necessariamente ricaricare la pagina. Vie anche utilizzato in siti più tradizionali per offrire varie forme di interattività.\cite{JS}. Node.js è stato creato tramite l'utilizzo di javascript. In particolare si tratta di un ambiente asincrono ed event driven per la costruzione di applicazioni distribuite basate su Javascript. Node.js non è un framework, lavora infatti a livelli più bassi, è sostanzialmente un 
-interprete con alcune librerie di base non native del linguaggio Javascript, ad esempio per l’I/O su file, per l’implementazione di 
+Il progetto è interamente realizzato tramite l'utilizzo del linguaggio Javascript. Fu introdotto nel 1995 come strumento per inserire programmi nelle pagine web del browser Netscape Navigator. Successivamente è stato via via adottato da tutti gli altri browser grafici, rendendo realizzabili moderne applicazioni Web con le quali si può interagire direttamente, senza dover necessariamente ricaricare la pagina. Vie anche utilizzato in siti più tradizionali per offrire varie forme di interattività.\cite{JS}. Node.js è stato creato tramite l'utilizzo di javascript. In particolare si tratta di un ambiente asincrono ed event driven per la costruzione di applicazioni distribuite basate su Javascript. Node.js non è un framework, lavora infatti a livelli più bassi, è sostanzialmente un interprete con alcune librerie di base non native del linguaggio Javascript, ad esempio per l’I/O su file, per l’implementazione di 
 server per vari protocolli standard. Sfrutta il loop di gestione degli eventi di Javascript, in particolare sulla possibilità 
 di definire funzioni callback per implementare uno schema di I/O non 
 bloccante.
-\subsection{Features introdotte in ES2021 utilizzate}
-\subsection{npm}
+
+\paragraph{Linee guida stesura del codice} Il team di sviluppo per la stesura del codice ha adottato uno standard comune a tutte le sue componenti. La struttura dei file di codice sorgente è stati quindi organizzata in:
+\begin{itemize}
+    \item \textbf{Screens}: ogni schermata dell'applicazione è rappresentata da un file di codice sorgente in questa directory
+    \item \textbf{Components}: ogni componente complesso all'interno di una schermata deve essere inserito in un file di codice sorgente apposito, per consentire una maggiore leggibilità e manutenibilità della soluzione
+    \item \textbf{Controllers}: ogni componente dell'UI per interfacciarsi con la logica dell'applicativo comunica con un controller che ha lo scopo di delegare questo compito alla parte di backend
+    \item \textbf{Assets}: ogni componente grafica o file di dati statico è organizzato in questa cartella e utilizzato in vari punti del codice
+    \item \textbf{Config}: i file di configurazione delle librerie esterne, la validazione dei dati e impostazioni varie, quali palette di colori e stringhe statiche, sono organizzati in questa cartella 
+    \item \textbf{Utility}: tutte le funzioni delegate a compiti complessi, come il calcolo del totale dei prezzi degli articoli di un carrello, sono contenute in file in questa directory
+    \item \textit{App.js}: rappresenta il codice sorgente radice dell'interfaccia grafica dell'applicazione react
+    \item \textit{index.js}: rappresenta il codice sorgente radice dell'applicazione stessa e ha il compito di eseguire l'inizializzazione delle componenti logiche e grafiche, come lo Store di Redux, una libreria di React per la gestione dello stato globale
+\end{itemize} 
+\begin{figure}
+\centering    
+\framebox[\textwidth]{%
+\begin{minipage}{0.9\textwidth}
+\dirtree{%
+ .1 {/src} .
+  .2 {/Screens} .
+  .2 {/Components} .
+  .2 {/Controllers} .
+  .2 {/Assets} .
+  .2 {/Config} .
+  .2 {/Utility} .
+  .2 {App.js} .
+  .2 {index.js} .
+}
+\end{minipage}
+}
+\caption{Struttura delle directory e dei file di un pannello di Garzone}
+\end{figure}
+Inoltre è stato previsto uno stile di stesura ispirato a Airbnb JavaScript\cite{AIRBNB}, che contiene un elenco di best practices per evitare errori di scrittura e con lo scopo di coordinare il metodo di stesura di codice del team di sviluppo.
+\subsection{NPM e Yarn}
+NPM è un sistema di gestione pacchetti scritti in Javascript in ambiente Node.js. Di norma contengono collezioni di funzioni alcune delle quali esportate, ovvero "visibili" all'esterno del modulo e quindi richiamabili dal progetto. Per la realizzazione di Garzone sono stati utilizzati numerosi pacchetti, con il compito di interfacciarsi a API esterne e realizzare componenti grafiche complesse come ad esempio mappe interattive. Inoltre è stato utilizzato per l'implementazione di script di esecuzione e rilascio dell'applicativo con configurazioni ad hoc. Per le componenti frontend è stato invece utilizzato Yarn, un packet manager costruito a un livello di astrazione superiore di npm, fornendone una semplificazione della sintassi delle istruzioni eseguibili.
 \newpage
 \section{Componente Frontend}
 \subsection{Linee guida grafiche per l'interfaccia utente}
