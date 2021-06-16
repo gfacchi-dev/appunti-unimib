@@ -274,13 +274,33 @@ In Garzone il codice sorgente delle Firebase Functions presenta una suddivisione
 \newpage
 \subsubsection{Realtime Database}
 Firebase Realtime Database è un database NoSQL hostato in cloud che permette il salvataggio e la sincronizzazione dei dati condivisi tra gli utenti in tempo reale. In Garzone è stato implementato per la gestione dei servizi di chat e gestione ordini. 
-\begin{figure}[!htb]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{rtd.png}
     \caption{Porzione di Firebase Realtime Database in Garzone}
 \end{figure}
+\FloatBarrier
 \subsubsection{Firebase Authentication}
 La registrazione, l'accesso e la gestione delle utenze in Garzone sono delegate al servizio di Firebase Authentication, il quale mette a disposizione l'implementazione del suo SDK. Le librerie su cui si basa il servizio sono OAuth 2.0 e OpenID Connect, inoltre Firebase Authentication fornisce servizi di autenticazione di terze parti come Google, Facebook, Twitter e Github, previsti come funzionalità aggiuntive per sviluppi futuri di Garzone. Per l'applicativo è stata inizialmente prevista un'autenticazione tramite mail e password insieme ai servizi di reset. 
+\subsubsection{Firebase Cloud Storage}
+La gestione delle immagini è affidata al servizio di Firebase Cloud Storage, il quale presenta numerosi vantaggi, tra cui:
+\begin{itemize}
+  \item Operazioni di download e upload indipendenti dalla qualità di rete del client che le esegue
+  \item Modello di sicurezza per consentire l'accesso ai file solo a utenze autorizzate
+  \item Scalabilità
+\end{itemize}
+Ogni file caricato sulla piattaforma viene depositato nel file system di Google Cloud, chiamato bucket. In Garzone il bucket presenta tre directory: 
+\begin{itemize}
+  \item \textbf{/categorie}, che contiene le immagini delle categorie merceologiche dei negozi, utilizzabili quando un negozio non fornisce un immagini profilo
+  \item \textbf{/comuni}, contenente i loghi dei comuni iscritti a Garzone
+  \item \textbf{/negozi}, contenente i loghi e le immagini relative a prodotti, servizi e promozioni di ogni negozio
+\end{itemize} 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1\textwidth]{bucket.png}
+  \caption{Interfaccia grafica console Firebase del Bucket di Garzone}
+\end{figure}
+\FloatBarrier
 \subsection{AWS}
 AWS (Amazon Web Services) è un fornitore di servizi web IaaS/PaaS utilizzabili dall'utenza con lo scopo, tra le altre cose, di implementare funzionalità aggiuntive alle proprie soluzioni.
 \subsubsection{Simple Email Service} 
