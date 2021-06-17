@@ -126,6 +126,19 @@ In React è possbile implementare due tipologie di componenti:
     \includegraphics[width=1\textwidth]{class.png}
     \caption{Esempio di Class Component in Garzone}
 \end{figure}
+\subsection{Gestione dello stato globale: Redux}
+In React la gestione dello stato è possibile nativamente all'interno di ogni singolo componente, ma così facendo emergono diverse problematiche come l'interoperabilità delle operazioni tra gli stati dei vari componenti e la presenza di pattern non standard per la loro gestione. Redux viene introdotto per risolvere, tra le altre cose, queste problematiche, prevedendo un flusso comune a tutte le operazioni di gestione dello stato:
+\begin{enumerate}
+  \item Definizione di una \lstinline[basicstyle=\ttfamily]!Action! che prevede un tipo (\lstinline[basicstyle=\ttfamily]!type!) e un set di dati (\lstinline[basicstyle=\ttfamily]!payload!)
+  \item Tramite un \lstinline[basicstyle=\ttfamily]!Dispatcher! l'\lstinline[basicstyle=\ttfamily]!Action! viene eseguita sullo \lstinline[basicstyle=\ttfamily]!Store!
+  \item Un \lstinline[basicstyle=\ttfamily]!Reducer! aggiorna lo \lstinline[basicstyle=\ttfamily]!Store! dell'applicazione tramite l'analisi del parametro \lstinline[basicstyle=\ttfamily]!type! dell'\lstinline[basicstyle=\ttfamily]!Action! sostituendo l'attuale stato con i dati contenuti nel \lstinline[basicstyle=\ttfamily]!payload!
+\end{enumerate}
+\paragraph{Store} Lo \lstinline[basicstyle=\ttfamily]!Store! in Redux è l'entità che contiene lo stato globale dell'applicazione
+\paragraph{Reducer} Un \lstinline[basicstyle=\ttfamily]!Reducer! è una funzione che ha lo scopo di aggiornare lo stato attuale dell'applicazione in un nuovo stato
+\paragraph{Action} Un \lstinline[basicstyle=\ttfamily]!Action! è un oggetto Javascript che per convenzione presenta un parametro \lstinline[basicstyle=\ttfamily]!type!, utilizzato dal \lstinline[basicstyle=\ttfamily]!Reducer! per interpretare come cambio di stato, e un parametro \lstinline[basicstyle=\ttfamily]!payload! che contiene i dati utilizzati dal \lstinline[basicstyle=\ttfamily]!Reducer! per aggiornare lo stato
+\paragraph{Dispatcher} Il \lstinline[basicstyle=\ttfamily]!Dispatcher! ha il compito di inviare allo \lstinline[basicstyle=\ttfamily]!Store! un \lstinline[basicstyle=\ttfamily]!Action!, la quale, tramite il \lstinline[basicstyle=\ttfamily]!Reducer!, esegue l'aggiornamento di stato definito nel \lstinline[basicstyle=\ttfamily]!type! dell'\lstinline[basicstyle=\ttfamily]!Action!
+\\[12pt]
+In Garzone Redux è utilizzato per la gestione della fase di login, salvando globalmente i dati dell'utente, e per la gestione dell'interfaccia grafica di chat e ordini, prevedendo ad esempio cambi di stato per l'aggiornamento realtime dei badge delle chat non lette o dei nuovi ordini.
 \subsection{antd}
 Per facilitare l'implementazione dei componenti grafici è stato previsto l'utilizzo del framework grafico \textit{antd}. Creato come libreria UI di React, antd contiene un set di componenti e demo per costruire interfacce grafiche interattive\cite{ANTD}. In Garzone, antd è stato importato tramite l'utilizzo del packet manager Yarn, e ne sono stati implementati i vari moduli facendo uso del tree shaking introdotto in Javascript ES6 con l'istruzione \lstinline[basicstyle=\ttfamily]!import!.
 \paragraph{Sovrascrizione stili con Less} Antd offre l'opportunità di sovrascrivere lo stile dei propri componenti utilizzando Less, una libreria che permette di scrivere stili con una sintassi formale e una logica definita. In Garzone sono state sovrascritte gran parte delle variabili di stile implementate da antd e sono stati opportunamente modificati gli script di esecuzione della soluzione, inserendo e utilizzando \lstinline[basicstyle=\ttfamily]!craco! \textit{(Create React App Configuration Override)}: un layer sovrastante il packet manager che offre la possibilità di aggiungere configurazioni particolari alla soluzione. 

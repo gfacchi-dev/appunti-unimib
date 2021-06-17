@@ -107,9 +107,24 @@ Una delle funzionalità più rilevanti all'interno di Garzone è sicuramente que
     \caption{Form di creazione ordine}
 \end{figure}
 Il negozio ha il compito infine di gestire l'avanzamento di stato dell'ordine dal proprio pannello di controllo, terminandone l'evasione selezionando il relativo status "consegnato". Ad ogni passaggio di status dell'ordine, la componente di backend ha il compito di notificare correttamente sia l'utente sia il negozio coinvolti tramite notifiche push e email transazionali. 
-SCHEMA STATUS ORDINE
+\begin{figure}[h!]
+    \begin{subfigure}{0.5\textwidth}
+    \includegraphics[width=1\linewidth]{flussoord.png}
+    \caption{Flusso di gestione di un ordine}
+    \label{fig:subim1}
+    \end{subfigure}
+    \begin{subfigure}{0.5\textwidth}
+    \includegraphics[width=1\linewidth]{statusord.png}
+    \caption{Diagramma dei possibili stati di un ordine}
+    \label{fig:subim2}
+    \end{subfigure}
+    
+    \caption{Schermate di Garzone relative alle promozioni}
+    \label{fig:image2}
+\end{figure}
 \FloatBarrier
 \subsection{Preventivi}
+Un ordine può essere anche generato da un negozio. Per eseguire questa operazione è necessario che il cliente richieda un preventivo al negozio. L'implementazione di questa funzionalità è stata prevista richiedendo ad un utente di inserire i dati necessari alla sua creazione, per poi generare un messaggio di chat che, invece di essere di tipo \textit{text}, è di tipo \textit{preventivo}. Il componente che effettua il render del messaggio di chat lato negozio interpreta automaticamente il messaggio di tipo preventivo e offre al negozio la possibilità di generare un preventivo tramite un modulo precompilato con i dati inseriti dall'utente. L'ordine sarà creato nello status \textit{preventivo} ed è questa volta compito dell'utente confermare o rifiutare il preventivo. In caso di divergenze tra domanda e offerta è possibile per il negozio modificare il preventivo creato e comunicarlo all'utente per poi consentire il preseguimento dell'evasione dell'ordine.
 \section{Chat}
 La Chat di Garzone permette di far comunicare tra loro un negozio ed un  cliente (One to One chat). L’idea alla base è quella di sfruttare in combinazione Firebase Realtime Database e Cloud SQL al fine di raggiungere il giusto compromesso tra performance, tempi di sviluppo e gestione dei costi. Firebase realtime Database si occuperà di salvare per ogni utente il counter delle notifiche e la sua lista di chat, mentre Cloud SQL salverà i messaggi (opzionalmente anche i contenitori chat). Firebase Realtime Database salverà per ogni utente, la lista delle sue chat oltre ai contatori di notifiche, in questo modo potrà essere sfruttata la funzionalità “real-time” per tenere aggiornata la lista chat e i badge di notifiche su tutti i client.\\
 Secondo quanto sopracitato avremo un database che seguirà il qui descritto schema:
@@ -118,5 +133,6 @@ Secondo quanto sopracitato avremo un database che seguirà il qui descritto sche
     \includegraphics[width=0.5\textwidth]{chatrtd.png}
     \caption{Record di chat in Firebase Realtime Database}
 \end{figure}
+\FloatBarrier
 
 \section{Appuntamenti}
