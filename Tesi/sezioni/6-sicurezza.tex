@@ -1,6 +1,11 @@
 \chapter{Sicurezza degli applicativi}
 \section{Consistenza del dato}
-\subsection{Validazione Front-end e Back-end}
-
-\section{Whitelist chiamate API}
+\subsection{Yup: Validazione frontend e backend}
+Per ottenere uno standard qualitativo sui dati inseriti nel database è prevista una stringente e doppia validazione. Infatti sia lato backend che lato frontend è presente una serie di controllo che impediscono inserimenti di dati non conformi alle aspettative. Questa funzionalità è offerta dal package \lstinline[basicstyle=\ttfamily]!Yup!, uno schema builder per il parsing e la validazione di dati.
+\subsection{Transazioni SQL}
+Nella componente backend è tra le altre cose prevista l'implementazione di transazioni SQL. Una transazione offre la possibilità di creare un punto di ripristino nel caso in cui delle operazioni SQL concatenate non vadano a buon fine. Le transazioni in Garzone sono utilizzate soprattutto in funzioni concernenti pagamenti ed eliminazioni/modifiche/aggiunte a cascata di record, come ad esempio la creazione di un utenza mailchimp e stripe collegata ad un account di cliente.
+\paragraph{ACID}
+\section{Sicurezza online}
+\subsection{Whitelist chiamate API}
+\subsection{Webhook}
 \subsection{HTTPS}
