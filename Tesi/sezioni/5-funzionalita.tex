@@ -1,5 +1,4 @@
 \chapter{Funzionalità e relative implementazioni}
-\section{Modello di Dominio e Diagramma ER}
 \section{Gestione utenze}
 Le utenze in Garzone sono rappresentate da singoli record sulla base di dati a cui sono referenziate istanze di utenze su vari servizi esterni. Ogni utenza della piattaforma ha in particolare associato un record su:
 \begin{itemize}
@@ -15,7 +14,7 @@ Ad ogni utenza viene assegnato il ruolo a cui appartiene, per poi consentire l'a
     \caption{Record utenza Garzone su Firebase Authentication}
 \end{figure}
 \FloatBarrier
-Dal pannelo di amministrazione è possibile abilitare/disabilitare l'accesso alle varie piattaforme per ogni utente registrato. Questa operazione avviene cambiando il valore del flag \textit{<<abilitato>>} presente in ogni istanza di utenza sulla base di dati e controllando ad ogni cambio di route l'effettiva abilitazione. Ogni richiesta effettuata dal client alla componente backend viene recepita e accettata solo nel caso in cui la sorgente disponga delle autorizzazioni necessarie, altrimenti è compito della singola function restituire una risposta provvista di errore.
+Dal pannello di amministrazione è possibile abilitare/disabilitare l'accesso alle varie piattaforme per ogni utente registrato. Questa operazione avviene cambiando il valore del flag \textit{<<abilitato>>} presente in ogni istanza di utenza sulla base di dati e controllando ad ogni cambio di route l'effettiva abilitazione. Ogni richiesta effettuata dal client alla componente backend viene recepita e accettata solo nel caso in cui la sorgente disponga delle autorizzazioni necessarie, altrimenti è compito della singola function restituire una risposta provvista di errore.
 \subsection{Registrazione}
 La procedura di registrazione prevede, per i pannelli di negozi e utenti, una fase di landing su una precisa pagina dell'applicativo accessibile da tutti i client che ne fanno richiesta. Dopo la compilazione dei campi e la loro validazione è compito della componente di backend eseguire le seguenti operazioni:
 \begin{enumerate}
